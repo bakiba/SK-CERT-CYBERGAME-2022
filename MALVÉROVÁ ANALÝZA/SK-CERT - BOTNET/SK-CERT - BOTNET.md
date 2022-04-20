@@ -60,6 +60,7 @@ Po spustení binárky žiadny output ale cez Wireshark vidíme, že komunikuje s
 *Keďže je to https komunikácia, museli sme pridať Burp certifikát do trusted root certificate store.*
 
 Tu vidíme Request a Response:
+
 ![](images/2022-04-19-11-12-59.png)
 
 Stiahneme si ten `runner.tar` a vidíme tam `flag.txt`.. ktorý ale nie je pre tuto úlohu, asi bude pre jednu z ďalších.
@@ -109,9 +110,11 @@ Po spustení `./runner` sa nič nedeje... niet divu. Otvárame `runner` v Ghidre
 
 Podlá analýzy main, kód otvára aktuálny adresár, a ak sa tam nachádza adresár menom "dRIA2HpoQrC24jEoww4m" tak ho zašifruje. 
 Vyskúšame vytvoriť adresár `dRIA2HpoQrC24jEoww4m` a spustiť `./runner`:
+
 ![](images/2022-04-19-16-18-31.png)
 
 Takže, takto sa dostaneme ďalej do `encrypt_file` funkcie, ktorá podlá analýzy nerobí nič zaujímavé sama o sebe, otvára adresár, číta meno adresára a vola ďalšiu funkciu `encrypt`, ktorá už vyzerá zaujímavo, najmä `for` loop ktorý vyzerá podozrivo, ako z predošlých úloh kde sa generuje flag:
+
 ![](images/2022-04-19-16-27-23.png)
 
 Skúšame krokovať cez `gdb`, nastavíme break point najprv na `main`, potom na `envrypt_file` a nakoniec sa dostaneme do `encrypt` a krokujeme do toho `for` loopu, a tento krát využijeme príkaz na vykonanie viac krokov naraz:
@@ -120,6 +123,7 @@ Skúšame krokovať cez `gdb`, nastavíme break point najprv na `main`, potom na
 python [gdb.execute('ni') for x in range(12)]
 ````
 Po niekoľkých opakovaní úspešne získavame ďalší flag:
+
 ![](images/2022-04-19-16-09-26.png)
 
 ```
