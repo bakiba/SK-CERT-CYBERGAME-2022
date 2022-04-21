@@ -3,7 +3,7 @@
 K obrazu pripájame aj volatility2 a volatility3 profily. </br>
 Reported Difficulty: 3
 
-# Čo a kam?	
+## 1 Čo a kam?	
 > Je potrebné zistiť aký proces vyniesol údaje, a na akú IP adresu boli údaje odoslané.
 Vlajka je PID a IP adresa (Formát: PID_IP)
 
@@ -47,7 +47,7 @@ Ten `runner.pyc` konecne priniesol ovocie, bola tam IP addressa na ktoru utocnik
 flag: 45184_198.19.183.20
 ```
 
-# Zranitelnosť
+## 2 Zranitelnosť
 > Je potrebné zistiť ako útočník prenikol do systému.
 Vlajka je CVE identifikátor zranitelnosti.
 
@@ -62,3 +62,9 @@ Skusame komandu `linux_pidhashtable` ci nam mozno ukaze viac:
 Zistujeme ze process id `683` patri procesu `supervisord`, rychle hladanie CVE patriace tomtu produktu nam neprinasaju ovocie, ani jedna z dvoch zdranitelnosti (	CVE-2017-11610, CVE-2019-12105) nie je nasou vlajkou.
 
 Zostavame tu asi zaseknuty....
+
+## 3 Payload
+>Zamknuté Zranitelnosť
+
+## 4 Eskalácia
+>Zamknuté Payload

@@ -9,9 +9,13 @@ Pozrieme sa na https://ventilsro.github.io/, zvyčajne prvý flag býva v page s
 
 ![](images/2022-03-05-14-24-18.png)
 
-Pozrieme sa naň a máme prvý flag: `SK-CERT{c4n_y0u_f1nd_17}`
+Pozrieme sa naň a máme prvý flag:
 
 ![](images/2022-03-05-14-24-31.png)
+
+```
+flag: SK-CERT{c4n_y0u_f1nd_17}
+```
 
 ## 2 Takže pre toto!
 >Keď už vieme ako funguje javascript, Musíme zistiť či náhodou neobsahuje niečo škodlivé.
@@ -34,16 +38,24 @@ Javascript:
 function process(text){document.getElementById("data_from_int").innerHTML=text}var ad=0;if(navigator.appVersion.indexOf("Linux")){ad=Math.floor(Math.random()*50+1)}else{ad=Math.floor(Math.random()*50+51)}fetch('https://int3.sk/reklama'+ad+'.txt').then(response=>response.text()).then(text=>process(text))
 ```
 
-Síce žiadny tam flag nie je, ale z kódu vidíme, že sa reklama ťahá z `'https://int3.sk/reklama'+ad+'.txt'`, kde `ad` je náhodne číslo medzi `1` a `101`, tak skúsme...Zdá sa, že Arci-Zločan chce aby sme skúsili 100 rôznych adries či sa v niektorej neukrýva ďalší flag… skúsime našu vernú zbraň: `curl https://int3.sk/reklama[1-100].txt` a máme ďalší flag: `SK-CERT{l3g17_4nt1v1ru5}`
+Síce žiadny tam flag nie je, ale z kódu vidíme, že sa reklama ťahá z `'https://int3.sk/reklama'+ad+'.txt'`, kde `ad` je náhodne číslo medzi `1` a `101`, tak skúsme...Zdá sa, že Arci-Zločan chce aby sme skúsili 100 rôznych adries či sa v niektorej neukrýva ďalší flag… skúsime našu vernú zbraň: `curl https://int3.sk/reklama[1-100].txt` a máme ďalší flag:
 
 ![](images/2022-03-05-14-31-18.png)
+
+```
+flag: SK-CERT{l3g17_4nt1v1ru5}
+```
 
 ## 3 Antivirus 3000
 >Reklama, a ponúka stiahnutie antivírusu? Podozrivé! Je potrebné zistiť čo reálne stahujeme.
 
-Z predchádzajúceho kroku vidíme, že reklama číslo 43 okrem flagu, ukrýva aj odkaz na nejaký shell script, tak sa poďme na to pozrieť: `curl http://194.182.66.53/antivirus3000_installer.sh` a máme hneď ďalší flag: `SK-CERT{1n574l_17_4lr34dy}`  
+Z predchádzajúceho kroku vidíme, že reklama číslo 43 okrem flagu, ukrýva aj odkaz na nejaký shell script, tak sa poďme na to pozrieť: `curl http://194.182.66.53/antivirus3000_installer.sh` a máme hneď ďalší flag:  
 
 ![](images/2022-03-05-14-34-56.png)
+
+```
+flag: SK-CERT{1n574l_17_4lr34dy}
+```
 
 ## 4 Elf
 >Dostali sme ďalšie hlásenie že niekoľko použivatelov tejto stránky malo poškodený počítač, je potrebné vyšetrovať ďalej
@@ -73,9 +85,11 @@ Zaujal ma kód v ktorom sa generuje url pre curl:
 ```
 curl_easy_setopt(local_18,0x2712,local_268);
 ```
+
 ![](images/2022-04-19-14-24-14.png)
 
 Snažil som sa nejak zistiť čo obsahuje `local_286` a po hodinách `ni`, `si`, `print $rdi` a podobných vecí, ktoré len tak-tak tuším čo znamenajú sa mi podarilo dostepovať pred call tej funkcie, kde som si pozrel obsah pamäte na `[RBP + -0x260]`
+
 ![](images/2022-04-19-14-29-03.png)
 
 a zobrazením obsahu pamäte som získal známy string, ktorý bol akceptovaný!

@@ -2,7 +2,7 @@
 > Neregistrované USB so šifrovaným obsahom bolo nájdené v priestoroch firmy. Nakolko v minulosti sa preukázalo, že boli vynášané informácie prostredníctvom externým médií, vnútorná politika nedovoluje používanie neregistrovanych prenosových médií, je potrebné preveriť celú situáciu. Prvotné overovanie komunikáciou so zamestnancami neprinieslo žiadne ovocie a tak je nevyhnutné vykonať dôkladne hĺbkovú forenziu zariadenia.<br/>
 Reported Difficulty: 2
 
-## Identifikácia
+## 1 Identifikácia
 > Nájdené zašifrované USB nemá vlastníka takže je potrebné postupne zistiť do ktorých počítačoch bolo USB pripojené. Máte k dispozícii ‘registry hives’ z každého počítača na oddelení a hľadajte na základe daného sériového čísla USB: 1C6F654E3FD0E2A019127566.
 https://drive.google.com/file/d/10fj5CzVbMdXhpZzbW-SipU1DJZjd1VN1/view?usp=sharing
 Odpoveď uveďte vo formáte computer-name_USB-VID_USB-PID a ak ich bude viac, odpovede oddeľte čiarkou.
@@ -15,7 +15,7 @@ Po prestudovani co to je za obsah, zistujeme ze je to [Kroll Artifact Parser and
 flag: DESKTOP-J3G0A8R_0951_1666
 ```
 
-## Pripojené média
+## 2 Pripojené média
 > Používateľ zisteného zariadenia sa volá Igor.
 Prikladáme triage image: https://drive.google.com/file/d/1ITBlhf7ZYGIi9HNlmfilujZao5Mqv7Lb/view?usp=sharing
 Uveďte všetky písmená pod ktorými bolo USB pripojené do Igorovho počítača v čase keď už bolo zašifrované. Odpoveď uveďte v abecednom poradí e.g. P,Q,R,S
@@ -30,7 +30,7 @@ Najprv som skusil `W,Z`, lebo som myslel ze je to ten DataTraveler kluc kedze ob
 flag: A,W,Z
 ```
 
-## Vynesené súbory
+## 3 Vynesené súbory
 > Nájdite súbory vynesené prost. USB. Treba uviesť všetky súbory ktoré existujú/existovali na USB. Uveďte názvy súborov v abecednom poradí e.g. abc.te,bbc.lr,zzz.txt
 
 Pouzitim Eric Zimmermanovho [JumpList Explorer](https://f001.backblazeb2.com/file/EricZimmermanTools/net6/JumpListExplorer.zip) sme si nalodovali Igorove `JumpLists` z `` a mame subory ktore boli na diskoch A, W a Z:
@@ -43,7 +43,7 @@ Pouzitim Eric Zimmermanovho [JumpList Explorer](https://f001.backblazeb2.com/fil
 flag: kopia faxu.docx,passwords.txt,poznamky.docx,Strategia_kybernetickej_bezpecnosti_2021.pdf
 ```
 
-## Šifrovanie
+## 4 Šifrovanie
 > Prehliadnutie Igorovho zariadenia odhalilo, že išlo aj o súbory, ktoré v najlepšom prípade existujú len na USB. Ako prvý krok je potrebné zistiť použitý spôsob (softvér) šifrovania. Hľadajte vo všetkých dostupných artefaktoch. Kedy bol taký šifrovací softvér stiahnutý? Odpoveď uveďte vo formáte Y-m-d H:i:s a v UTC timezone.
 
 Vieme ze pouzity sifrovaci software bol VeraCrypt, a odpoved kedy bol stiahnuty skusime najst `Downloads` adresar pre uzivatela Igor. Ten sa ale nenachadza v image disku, ale mame tam $MFT (Windows Master File Table) v ktorom skusime najst metadata z C:\ disku.
@@ -55,7 +55,7 @@ Pouzijeme [MFTExplorer](https://f001.backblazeb2.com/file/EricZimmermanTools/net
 flag: 2022-01-07 17:50:29
 ```
 
-## Veracrypt
+## 5 Veracrypt
 > Teraz keď vieme že ide o veracrypt, môžeme nahliadnuť do inych artefaktov a zamerať sa na podmnožinu informácií. Kedy bolo naposledy veracryptom formátované USB? Odpoveď uveďte vo formáte Y-m-d H:i:s
 
 Vacisnu info o VeraCrypt artefaktoch sme cerpali z http://web.archive.org/web/20201204131937/https://sparky.tech/tracking-encryption-part-1-veracrypt-usage/
@@ -84,7 +84,7 @@ a mame konecne spavny timestamp:
 flag: 2022-01-07 18:37:34
 ```
 
-## Mail
+## 6 Mail
 > Počas prehliadania prefetch súborov ste mohli naraziť aj na dôkaz vykonávania OUTLOOK.EXE. Zistite posledné informácie z mailovej komunikácie. Uveďte s kým Igor komunikoval. Odpoveď uveďte ako mailovú adresu v bežnom formáte e.g. sk-cert@cybergame.sk
 
 Tento flag bol len uz ceresnickou na torte, jednoducho sme otvorili Outlook offline data file `iviechagor@gmail.com.ost` z tirage image ktory sa nachazal v `E:\C\Users\Igor\AppData\Local\Microsoft\Outlook` a zistili s kym komunikoval:

@@ -2,7 +2,7 @@
 >Zákazník nás poprosil o analýzu logu z ftp servera ktorý niekto vyhackoval. Log najdete na: https://drive.google.com/file/d/1py6tEkkzk_2BnFgvqtby-8UVGbnxzE_P/view?usp=sharing <br/>
 Reported Difficulty: 0
 
-# Útočník
+## 1 Útočník
 > Z akej IP adresy sa vykonal útok?
 Formát vlajky: IP
 
@@ -14,7 +14,7 @@ Po otvoreni logu a kraktom preskumani, vidime vela `CONNECT: Client` a `FAIL LOG
 flag: 198.19.128.96
 ```
 
-# Aký použivateľ
+## 2 Aký použivateľ
 > Aký je správny použivateľ ftp serveru?
 Format vlaky: použivateľ
 
@@ -26,7 +26,7 @@ Po odstraneny vsetkych riakdov obsahujucich `FAIL LOGIN`, pozrieme co nam zostal
 flag: bob
 ```
 
-# Úspešný prienik
+## 3 Úspešný prienik
 > O akom čase útočník úspešne prenikol do systému?
 Formát vlajky: Y-m-d H:i:s
 
