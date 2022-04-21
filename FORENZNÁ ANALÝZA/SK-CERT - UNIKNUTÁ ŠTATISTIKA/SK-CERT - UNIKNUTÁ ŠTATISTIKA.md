@@ -64,7 +64,7 @@ Zistujeme ze process id `683` patri procesu `supervisord`, rychle hladanie CVE p
 Zostavame tu asi zaseknuty....
 
 ## 3 Payload
->Zamknuté Zranitelnosť
+> Zamknuté Zranitelnosť
 
 ## 4 Eskalácia
->Zamknuté Payload
+> Zamknuté Payload

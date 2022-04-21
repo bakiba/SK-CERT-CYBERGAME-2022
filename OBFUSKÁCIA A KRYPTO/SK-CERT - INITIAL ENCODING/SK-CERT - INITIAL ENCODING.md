@@ -1,8 +1,8 @@
 # SK-CERT - INITIAL ENCODING
->Ako vstupný scenár do tejto témy sme zvolili encoding, aby ste sa oboznámili s rôznymi zápismi textu. Link: https://pastebin.com/npNB3H16 <br/>
+> Ako vstupný scenár do tejto témy sme zvolili encoding, aby ste sa oboznámili s rôznymi zápismi textu. Link: https://pastebin.com/npNB3H16 <br/>
 Reported Difficulty: 0
 
-# Prvá časť
+## 1 Prvá časť
 > Jedná sa o jeden z najbežnejších enkódingov
 
 Vyzera to na base64 encoding:
@@ -17,7 +17,7 @@ Pouzieme Linux shell a dekodujeme `curl https://pastebin.com/raw/npNB3H16 | base
 flag: SK-CERT{b453_64_fl4g}
 ```
 
-## Druhá časť
+## 2 Druhá časť
 > Base64 ste úspešne zvládli, zvládnete aj ďaľšiu výzvu?
 
 Dalsia cast enkodovania vyzera byt standardny ASCII kod, pozujeme CyberChef pre tuto ulohu:
@@ -28,7 +28,7 @@ Dalsia cast enkodovania vyzera byt standardny ASCII kod, pozujeme CyberChef pre 
 flag: SK-CERT{45c11_3nc0d1ng}
 ```
 
-# Tretia časť
+## 3 Tretia časť
 > Tak a touto úlohou prichádzame na záver INITIAL Scenáru. Držíme palce v hre!
 
 Posledna cast zda sa byt Hex kod:

@@ -1,9 +1,9 @@
 # SK-CERT - NEBEZPEČNÝ MALVÉR
->Externá firma nás informovala o výskyte nového linuxového malvéru. Malvér údajne umožňuje vzdialený prístup do siete a vykonáva útoky s finančným dopadom. Firma dokázala zistiť že za tým je tento súbor (heslo do zipu je cybergame2022): https://drive.google.com/file/d/1ImyJIMRkNw47h0M45CKgxT3byDzZ0slz/view?usp=sharing
+> Externá firma nás informovala o výskyte nového linuxového malvéru. Malvér údajne umožňuje vzdialený prístup do siete a vykonáva útoky s finančným dopadom. Firma dokázala zistiť že za tým je tento súbor (heslo do zipu je cybergame2022): https://drive.google.com/file/d/1ImyJIMRkNw47h0M45CKgxT3byDzZ0slz/view?usp=sharing
 a požiadali nás o analýzu. <br/>
 Reported Difficulty: 3
 
-## Kill switch
+## 1 Kill switch
 > Je možné malvér deaktivovať?
 
 Zo stihnuteho suboru mame file `iodine-infected` a pomocou `file iodine-infected` zistujeme ze je to Linux ELF 64-bit executable, `strings` nam ziadny flag nenasiel. Virustotal nic neudava.
@@ -34,8 +34,8 @@ Problem ako donutit aby curl vratilo `0` som vyriesil pridanim `lnjkabnsklmjgfkd
 flag: SK-CERT{h4rdc0r3_4nt1d3bug}
 ```
 
-## Inject
->Je potrebné zistiť ako malvér vykonáva svoju ďalšiu fázu.
+## 2 Inject
+> Je potrebné zistiť ako malvér vykonáva svoju ďalšiu fázu.
 
 Ak pouzijeme [gdb](https://man7.org/linux/man-pages/man1/gdb.1.html) na debugovanie, vidme ze su tam nejake antidebug kontroly:
 
@@ -47,11 +47,17 @@ Z kodu vidim ze je tam funkcia ktora checkuje `/proc/self/status` a pri trosku g
 
 Tu moja snaha asi konci... debuging je nieco co sa definitivne musim naucit. 
 
-## Zadné vrátka	
->Ako sa útočníci dotanú do siete?
+## 3 Zadné vrátka	
+> Ako sa útočníci dotanú do siete?
 
 Tu som skusil pouzit flag co som naisle pri mojom prvom pokuse pri hladani riesenia prvej ulohy, a zobralo to.
 
 ```
 flag: SK-CERT{dn5_3ncryp70r}
 ```
+
+## 4 Fáza 2
+> Zamknuté Inject
+
+## 5 ET volá domov
+> Zamknuté Fáza 2

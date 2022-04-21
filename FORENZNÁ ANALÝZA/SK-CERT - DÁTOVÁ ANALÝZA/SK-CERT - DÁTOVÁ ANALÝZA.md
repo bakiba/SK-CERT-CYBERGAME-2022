@@ -6,7 +6,7 @@ Reported Difficulty: 1
 ## 1 Kontrola
 > Z dodaného PCAP súboru je potrebné zistiť či naozaj je spoločnosť infikovaná, a pokiaľ áno, tak je potrebné zistiť o aký privátny klúč sa odosiela. Vlajka je IP adresa serveru na ktorý sa klúč odoslal.
 
-Musim uznat ze som to isiel skratkou a skusal rozne IPecky z komunikacie kym som nenatrafil na tu pravu: `194.182.66.53`
+Otvorime `part1.pcap` vo Wireshark a pustime sa do analyzi. Musim uznat ze som to isiel skratkou a skusal rozne IPecky z komunikacie kym som nenatrafil na tu pravu: `194.182.66.53`
 
 ```
 flag: 194.182.66.53
@@ -44,7 +44,7 @@ flag: YouWillCryRansomware3000.exe
 > Kompromitovaný LinuxServerWebServer je náše testovacie prostredie, aplikácie na serveri sú dostupné iba z lokálnej siete, ale telnet server je otvorený do sveta. Prikladáme Pcap s potrebnými dátami. https://drive.google.com/file/d/1y3pOvG9PDGf7Sg7HtgOGvfjpk6qlVYor/view?usp=sharing
 Vlajka je EpochTime prieniku do systému (bez milisekúnd).
 
-Po otvoreni pcap suboru, poobzerame sa trosku okolo a uvidime ze sa niekdo snazi prihlasit cez telnet session:
+Po otvoreni `web.pcap` suboru, poobzerame sa trosku okolo a uvidime ze sa niekdo snazi prihlasit cez telnet session:
 
 ![](images/2022-03-06-15-43-26.png)
 
