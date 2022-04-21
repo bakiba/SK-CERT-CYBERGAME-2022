@@ -2,7 +2,7 @@
 >Dostali sme hlásenie že na stránke ventilsro.github.io vyskakuje podozrivé okno. Mohli by ste to skontrolovať? <br/>
 Reported Difficulty: 2
 
-## Záhadné okno
+## 1 Záhadné okno
 >Nietorý použivatelia nám občas nahlásia vyskakovacie okno v strede obrazovky, je potrebné túto aktivitu preveriť.
 
 Pozrieme sa na https://ventilsro.github.io/, zvyčajne prvý flag býva v page source, ale v tomto prípade nič tam nie je. Zaujímavé ale vyzerá ten javascript:
@@ -13,7 +13,7 @@ Pozrieme sa naň a máme prvý flag: `SK-CERT{c4n_y0u_f1nd_17}`
 
 ![](images/2022-03-05-14-24-31.png)
 
-## Takže pre toto!
+## 2 Takže pre toto!
 >Keď už vieme ako funguje javascript, Musíme zistiť či náhodou neobsahuje niečo škodlivé.
 
 Ten java script vyzerá podozrivo, pravdepodobne bol použitý nejaký obfuscator, skúsime hľadať online, napríklad tento: http://www.addressmunger.com/javascript_obfuscator/index.php
@@ -38,14 +38,14 @@ Síce žiadny tam flag nie je, ale z kódu vidíme, že sa reklama ťahá z `'ht
 
 ![](images/2022-03-05-14-31-18.png)
 
-## Antivirus 3000
+## 3 Antivirus 3000
 >Reklama, a ponúka stiahnutie antivírusu? Podozrivé! Je potrebné zistiť čo reálne stahujeme.
 
 Z predchádzajúceho kroku vidíme, že reklama číslo 43 okrem flagu, ukrýva aj odkaz na nejaký shell script, tak sa poďme na to pozrieť: `curl http://194.182.66.53/antivirus3000_installer.sh` a máme hneď ďalší flag: `SK-CERT{1n574l_17_4lr34dy}`  
 
 ![](images/2022-03-05-14-34-56.png)
 
-## Elf
+## 4 Elf
 >Dostali sme ďalšie hlásenie že niekoľko použivatelov tejto stránky malo poškodený počítač, je potrebné vyšetrovať ďalej
 
 Z predchádzajúcej úlohy vidíme, že shell script niečo stiahne z `https://rentry.co/vpvqs/raw` a uloží to ako súbor `antivirus3000`. Sťahujeme ten súbor a zisťujeme, že je to štandardná Linuxová binárka. 
@@ -78,7 +78,7 @@ curl_easy_setopt(local_18,0x2712,local_268);
 Snažil som sa nejak zistiť čo obsahuje `local_286` a po hodinách `ni`, `si`, `print $rdi` a podobných vecí, ktoré len tak-tak tuším čo znamenajú sa mi podarilo dostepovať pred call tej funkcie, kde som si pozrel obsah pamäte na `[RBP + -0x260]`
 ![](images/2022-04-19-14-29-03.png)
 
-a zobrazením obsahu pamäte som získal známy sting, ktorý bol akceptovaný!
+a zobrazením obsahu pamäte som získal známy string, ktorý bol akceptovaný!
 
 ![](images/2022-04-19-14-31-07.png)
 
@@ -101,7 +101,16 @@ je to vlastne adresa pre `local_268[int(conter)]`, nie pre cely string `local_26
 0x7fffffffdc90: "https://pastebin.com/raw/9gQzJk4j#SK-CERT{p4"
 ```
 
-## Ďalšia binárka
+## 5 Vykonané príkazy
+>Zistili ste, že program spúšťa príkazy z pastebin. Teraz treba zistiť aké konkrétne.
+
+Tu som použil flag, ktorý som získal na začiatku predchádzajúcej úlohy, kde som odchytil komunikáciu s pastebin a stiahol `runner.tar`, ktorý obsahoval `flag.txt`
+
+```
+flag: SK-CERT{4n0th3r_f1lthy_3lf}
+```
+
+## 6 Ďalšia binárka
 >Ďalší binárny súbor? Pustite sa do analýzy
 
 Po spustení `./runner` sa nič nedeje... niet divu. Otvárame `runner` v Ghidre a pozeráme `main` funkciu:
@@ -130,7 +139,7 @@ Po niekoľkých opakovaní úspešne získavame ďalší flag:
 flag: SK-CERT{th3_k3y}
 ```
 
-## Dekryptor
+## 7 Dekryptor
 >Z analýzy sme zistili že sa jedná o ransomvér a klúč je pevne zakódovaný v zdrojovom kóde. Je potrebné napísať dekryptor a dekryptovať následovné súbory: https://drive.google.com/file/d/1Iv_Bl3yI8Pncd5iq3xaGdqnaScVwTO3Q/view?usp=sharing
 
 Tak toto už si netrúfam...možno nabudúce.

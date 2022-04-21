@@ -5,7 +5,7 @@ Reported Difficulty: 2
 ## Bežný obrázok?	
 > Scenár sa začína analýzou tohto obrázku: linka
 
-Skusame nejaky online sego decoder, a tento sa ukazal uzitocny https://futureboy.us/stegano/decinput.html 
+Skusame nejaky online stego decoder, a tento sa ukazal uzitocny https://futureboy.us/stegano/decinput.html 
 
 ![](images/2022-03-08-21-55-30.png)
 

@@ -49,6 +49,7 @@ Po otvoreni pcap suboru, poobzerame sa trosku okolo a uvidime ze sa niekdo snazi
 ![](images/2022-03-06-15-43-26.png)
 
 Skusime hladat "Login" v paketoch s cielom najst prvy success login, a po niekolko desiatok klikoch narazame na "Last Login" message ktora sa objavuje po uspesnom prihlaseni sa.
+
 ![](images/2022-03-06-15-48-16.png)
 
 Pre istotu pojdeme este zopar paketov vyssie aby sme sa uistili ze to bol utocnik ktory uhadol login a heslo. Po prezreti zopar desiatok paketov predtym vidime ze utocnik uhadol login `bob` a heslo `adminbob` a paket cislo `6262` mozeme povazovat ako okamih preiniku do systemu ktory ma EpochTime (bez milisekund)

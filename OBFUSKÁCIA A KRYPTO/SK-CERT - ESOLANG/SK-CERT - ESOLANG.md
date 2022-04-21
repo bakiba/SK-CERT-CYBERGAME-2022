@@ -25,8 +25,7 @@ Bolo treba zvolit JSFuck `v0.5.0` a zaskrtnut `With eval`:
 flag: SK-CERT{wh47_7h3_j5fu*k}
 ```
 
-## &nbsp;
-> 
+## \&nbsp;
 
 Obsah na pastebin sa pozdava byt prazdny ale vidime ze tam je velkost suboru ~140KB takze tam nieco non-printable je. 
 
