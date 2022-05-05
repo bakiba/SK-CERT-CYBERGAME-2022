@@ -39,5 +39,41 @@ flag:SK-CERT{7r4n54c710n_c0mpl373}
 ## 4 Sociálna sieť
 > Je tu ešte viac na zistenie?
 
+Na discorde si vyhladame usera `darkness#8770` a v jeho profile najdeme link na reddit:
+
+![](images/2022-05-02-20-56-50.png)
+
+Po otvoreni profilu v reddite mame dalsi flag:
+
+![](images/2022-05-02-20-57-48.png)
+
+```
+flag: SK-CERT{w4y_t0_r3dd1t}
+``` 
+
 ## 5 Zo siete na sieť
-> Zamknuté Sociálna sieť
+> Nikdy nepárujte svoju online identitu so svojou reálnou!
+
+Prehladavanie socialnych sieti pre uzivatela `d4rkne555` nic neprinieslo, zaujimave ze google query na `d4rkne555 site:linkedin.com` vrati podozrivy vysledok, ale ziadny flag to neprinieslo.
+
+![](images/2022-05-02-21-39-39.png)
+
+Viac krat som sa vracal na reddit a klikal na pastebin link od nasho hladaneho:
+
+![](images/2022-05-02-21-41-36.png)
+
+Ale link vracia `404`:
+
+![](images/2022-05-02-21-42-05.png)
+
+Viac krat som sa tu motal kym som si nevsilom ze `https://pastebin.com/Y3SiRUze` nie je ten link v texte `https://pastebin.com/XgY6jQpL`, a ze ten text bol editovany... po otvoreni spravneho pastebinu mame link na facebook profil:
+
+![](images/2022-05-02-21-44-44.png)
+
+A konence mame nasho kupujuceho:
+
+![](images/2022-05-02-21-45-50.png)
+
+```
+flag: SK-CERT{h3nr1ch_r15z0rf3r}
+```
