@@ -1,4 +1,4 @@
-# SK-CERT - INITIAL ENCODING
+# SK-CERT - INITIAL: ENCODING
 > Ako vstupný scenár do tejto témy sme zvolili encoding, aby ste sa oboznámili s rôznymi zápismi textu. Link: https://pastebin.com/npNB3H16 <br/>
 Reported Difficulty: 0
 

@@ -1,4 +1,4 @@
-# SK-CERT - INITIAL FTP SERVER
+# SK-CERT - INITIAL: FTP SERVER
 > Zákazník nás poprosil o analýzu logu z ftp servera ktorý niekto vyhackoval. Log najdete na: https://drive.google.com/file/d/1py6tEkkzk_2BnFgvqtby-8UVGbnxzE_P/view?usp=sharing <br/>
 Reported Difficulty: 0
 

@@ -5,6 +5,8 @@ Reported Difficulty: 1
 ## 1 ODT
 > Je potrebné zistiť či tento dokument obsahuje niečo zaujímavé
 
+> Body: 3
+
 Po stiahnuti dokumentu z prilozeneho odkazu, zistime ze je to OpenOffice Document file, asi to bude nejake macro, takze po nainstalovani LibreOffice otvorime bitcoin.odt a hned mame upozornenie ze macra mozu obsahovat virus. Po otvoreni macra, hned mame nas prvy flag:
 
 ![](images/2022-03-05-14-00-36.png)
@@ -15,6 +17,8 @@ flag: SK-CERT{h3ll4_3v1l_m4cr0}
 
 ## 2 Čo spúšťame?
 > Vyzerá to tak, že macro spúšťa nejaký ďalší program, je potrebné zistiť aký.
+
+> Body: 3
 
 Hladanie dalsieho flagu bolo trosku zamotane kedze prve podozrive miesto po dekodovani ASCII (https://testguild.com/qtp-ascii-chr-code-chart/) odhalilo flag `SK-CERT{wh3re_my_crypt0_g03s}`, ale to nebol ten spravny.
 
@@ -31,6 +35,8 @@ flag: SK-CERT{w3_w4nt_s0m3_w4kk3t5}
 ## 3 Čo ďalej?
 > Zistite kam sa posielaju ukradnuté kryptopenaženky.
 
+> Body: 3
+
 Tak tu sme hned skusili flag `SK-CERT{wh3re_my_crypt0_g03s}` ktory sme nasli v predchadzajucom ktoku pri dekodovni podozriveho ASCII retazca:
 
 ```
@@ -42,6 +48,8 @@ flag: SK-CERT{wh3re_my_crypt0_g03s}
 
 ## 4 Skládačka
 > Zistili sme kam sa odosielajú kryptopenaženky. Skúste zistiť ako funguje malvér v prípade, že vykradne nejaké kryptopenaženky.
+
+> Body: 3
 
 Kedze macro hlada krypto penazenky aby dostal do dalsej faze exekucie, tak mu tam jednu dame, ideme na https://www.myetherwallet.com/wallet/create/software?type=keystore vygenerujeme softwerovu penazenku a pokracujeme v debugovani. Tu ale narazame na problem lebo strana co ma prijimat crypto nefunguje a macro mam tu pada:
 
@@ -61,6 +69,8 @@ flag: SK-CERT{50m3_k1nd_0f_m4lw4r3}
 
 ## 5 Finálna vlajka
 > Z predošlej časti ste zistili že sa stahuje nejaký script, je potrebné zistiť čo je zač.
+
+> Body: 3
 
 Z toho pastebinu z predoslej ulohy sa nam stiahne powershell payload do `C:\Users\Public\Documents\script.ps1`. Samozrejme ze ten powershell je obfuscovany:
 

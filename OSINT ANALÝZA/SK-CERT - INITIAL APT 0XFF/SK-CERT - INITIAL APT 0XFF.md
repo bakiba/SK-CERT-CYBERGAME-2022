@@ -1,4 +1,4 @@
-# SK-CERT - INITIAL APT 0XFF
+# SK-CERT - INITIAL: APT 0XFF
 > Objavila sa nová APT skupina, je potrebné zistiť kto sú <br/>
 Reported Difficulty: 0
 
