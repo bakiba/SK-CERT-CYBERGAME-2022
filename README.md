@@ -4,7 +4,8 @@ Tento repository je mojou snahou popísať postup môjho riešenia úloh v CTF C
 
 Viac informácií o hre, pravidlách, štatúte atď.: https://cybergame.sk-cert.sk/
 
-Tento repository obsahuje write-up úloh ktoré sa mi podarilo v tejto súťaži vyriešiť. Hlavnú ideou týchto write-upov je zachovať znalosť a skúsenosti získane v tejto súťaži, a tiež ako učebná pomôcka pre tých ktorým je toto zaujímavé.
+Tento repository obsahuje write-up úloh ktoré sa mi podarilo v tejto súťaži vyriešiť. Hlavnú ideou týchto write-upov je zachovať znalosť a skúsenosti získane v tejto súťaži, a tiež ako učebná pomôcka pre tých ktorým je toto zaujímavé. <br/>
+Postup som dokumentoval takmer počas samotnej investigácie, takže sú tu aj chyby ktoré som spravil, zle cesty ktorými som sa vybral a aj zopár predčasne objavených flagov, ktoré nepatrili k úlohe ktorú som pravé riešil ale ku niektorej z nasledujúcich. 
 
 # Obsah
 

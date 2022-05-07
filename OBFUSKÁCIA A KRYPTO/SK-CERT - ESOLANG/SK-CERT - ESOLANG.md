@@ -5,6 +5,8 @@ Reported Difficulty: 1
 ## 	1 Obrázkový kód
 > Zdá sa vám na tomto obrázku niečo zvláštne?
 
+> Body: 3
+
 Stahujeme fakt zvlasny obrazok:
 
 ![](images/2022-04-21-10-22-06.png)
@@ -19,6 +21,8 @@ flag: SK-CERT{1m4g3_pr0gr4m}
 
 ## 2 [][(![]+[])
 > Ako je možné že tieto znaky javascript vykoná?
+
+> Body: 3
 
 Dalsia uloha, pozerame co to je na https://jsfiddle.net/wngjsvcq/
 
@@ -37,6 +41,8 @@ flag: SK-CERT{wh47_7h3_j5fu*k}
 
 Obsah na https://pastebin.com/KmBy042V sa pozdava byt prazdny ale vidime ze tam je velkost suboru ~140KB takze tam nieco non-printable je. 
 
+> Body: 3
+
 ![](images/2022-03-10-18-43-17.png)
 
 Stiahneme si ten subor a pozrieme cez HEX editor, vidime tam hex code `20` (Space), `09` (Horizontal tab), `0d` (Carriage return) a `0a` (Line feed) co su vsetko non-printable znaky z ASCII tabulky.
@@ -54,6 +60,8 @@ flag: SK-CERT{1nv151bl3_wh1735p4c3_c0d3}
 ## 4 ++>-]<---.<<
 > Dávajte si pozor, aby vás z toho nerozbolel mozog
 
+> Body: 3
+
 Dalsi z exemplarov je `Brainfuck` a hned pouzijeme decoder na https://www.dcode.fr/brainfuck-language:
 
 ![](images/2022-03-10-21-18-56.png)
@@ -64,6 +72,8 @@ flag: SK-CERT{my_br41n_hur75}
 
 ## 5 Toto je peklo
 > Posledná úloha v scenári, dúfame že ste si tento scenár užili
+
+> Body: 3
 
 Z predchazajucej ulohy vysiel taky divny retazec nahodnych znakov, skusili sme vsetky dekodery na https://www.dcode.fr/tools-list#programming_language a ani jeden nepomohol. Google nas zaviedol na https://weekly-geekly.imtqy.com/articles/313334/index.html a skusame najst [dekompilator](https://www.tutorialspoint.com/execute_malbolge_online.php) na `Malbolge` (deviaty kruh Danteho pekla :))
 

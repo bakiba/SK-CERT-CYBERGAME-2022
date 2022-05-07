@@ -5,6 +5,8 @@ Reported Difficulty: 3
 ## 1 Kto som?
 > Kto vlastne je Jaromir Beihofner
 
+> Body: 9
+
 Ah.. neznášam keď musím zakladať Facebook profil...našťastie je prvý flag verejný.
 
 ![](images/2022-03-06-17-35-50.png)
@@ -15,6 +17,8 @@ flag: SK-CERT{50_7h15_15_m3}
 
 ## 2 Cestopis
 > Jaromir sa rád podelil o svoje cestovatelské zážitky
+
+> Body: 9
 
 Predpokladám, že tu treba nájsť Jaromirovu stránku ci blog. Skúšal som rôzne Google query a web.archive.org ale sa mi nepodarilo. Pri prezeraní Facebook profilu vidíme odkaz na `jaromirbeihofner.github.io`
 
@@ -35,6 +39,8 @@ flag: SK-CERT{4rch1v3_0rg_15_5tr0ng}
 
 ## 3 Archív
 > Čo všetko vieme získať zo stránky?
+
+> Body: 9
 
 Z archívu stránky sú zaujímavé informácie o zrušení stránky z dna 25.02.2022:
 
@@ -88,6 +94,8 @@ flag: SK-CERT{r4r_p455w0rd_cr4ck3d}
 ## 4 Obľúbené miesto
 > Jaromir zdieľal fotku chutného jedla, vieme zistiť o tejto fotke viacej?
 
+> Body: 9
+
 Aj keď som flag pre tuto úlohu našiel už v predchádzajúcej úlohe, ideme skúsiť cestu ktorú pre nás tvorcovia učili.
 Otvárame `photo.jpg` z rar súboru a skúšame Google Image Search. Tento nám moc nepomohol, žiadny konkrétny bistro ako by som očakával. 
 
@@ -133,5 +141,7 @@ flag: SK-CERT{pr377y_4w3s0m3_bbq}
 
 ## 5 Posledné miesto
 > Je potrebné zistiť kde sa jaromir nachádzal naposledy.
+
+> Body: 9
 
 

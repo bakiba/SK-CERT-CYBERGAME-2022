@@ -5,6 +5,8 @@ Reported Difficulty: 0
 ## 1 Nová APT Skupina
 > Živé.sk publikovalo článok o odhalení novej APT skupiny (APT skupina Fibonacci FIN). Čo všetko viete zistiť o tejto APT skupine zo živé.sk
 
+> Body: 1
+
 Vyhladame uvedeny clanok na [zive.sk](https://zive.aktuality.sk/clanok/fl21n24/nova-skupina-fibonacci-fin-utoci-na-siete-hotelov-monitoruje-svetovych-politikov/) a hladame `SK-CERT`:
 
 ![](images/2022-03-06-17-15-41.png)
@@ -16,6 +18,8 @@ flag: SK-CERT{r3c0nn41554nc3}
 ## 2 Druhá časť
 > Zistite, či táto APT skupina napadla nejakú Slovenskú firmu.
 
+> Body: 1
+
 Toto bolo dobre, mohlo to spustit hodiny vyhladavania na googly... a stacilo pozriet do komentov k clanku:
 
 ![](images/2022-03-06-17-19-40.png)
@@ -26,6 +30,8 @@ flag: SK-CERT{k4ff3b0t}
 
 ## 3 Odporúčania
 > Dajte kaviarni odporúčania, čo urobiť. Živé.sk už na túto tému publikovala článok.
+
+> Body: 1
 
 Kedze aj ja chcem taky mlyncek tak som hned zacal googlit :)
 

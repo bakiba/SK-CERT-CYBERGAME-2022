@@ -7,6 +7,8 @@ Reported Difficulty: 2
 https://drive.google.com/file/d/10fj5CzVbMdXhpZzbW-SipU1DJZjd1VN1/view?usp=sharing
 Odpoveď uveďte vo formáte computer-name_USB-VID_USB-PID a ak ich bude viac, odpovede oddeľte čiarkou.
 
+> Body: 6
+
 Po prestudovani co to je za obsah, zistujeme ze je to [Kroll Artifact Parser and Extractor (KAPE)](https://www.kroll.com/en/insights/publications/cyber/kroll-artifact-parser-extractor-kape). Dalsie studovanie nas priviedlo [Registry Explorer](https://f001.backblazeb2.com/file/EricZimmermanTools/net6/RegistryExplorer.zip) do ktoreho sme nalodovali exportnute registry a jednoduchim find sme hladali USB ID `1C6F654E3FD0E2A019127566`. Jediny zaznam bol najdeni v pocitaci `DESKTOP-J3G0A8R` uzivatela `Igor`:
 
 ![](images/2022-03-17-20-36-13.png)
@@ -19,6 +21,8 @@ flag: DESKTOP-J3G0A8R_0951_1666
 > Používateľ zisteného zariadenia sa volá Igor.
 Prikladáme triage image: https://drive.google.com/file/d/1ITBlhf7ZYGIi9HNlmfilujZao5Mqv7Lb/view?usp=sharing
 Uveďte všetky písmená pod ktorými bolo USB pripojené do Igorovho počítača v čase keď už bolo zašifrované. Odpoveď uveďte v abecednom poradí e.g. P,Q,R,S
+
+> Body: 6
 
 V tomto sme dlho hrabali, hladali cez Registry Explorer, USBDriveLog, kym sme si nevsimli pod `SYSTEM\MountedDevices` kluce s `VeraCryptVolume` hodnotami, a potom len spravne usporiadat pismena podla abecedy. 
 
@@ -33,6 +37,8 @@ flag: A,W,Z
 ## 3 Vynesené súbory
 > Nájdite súbory vynesené prost. USB. Treba uviesť všetky súbory ktoré existujú/existovali na USB. Uveďte názvy súborov v abecednom poradí e.g. abc.te,bbc.lr,zzz.txt
 
+> Body: 6
+
 Pouzitim Eric Zimmermanovho [JumpList Explorer](https://f001.backblazeb2.com/file/EricZimmermanTools/net6/JumpListExplorer.zip) sme si nalodovali Igorove `JumpLists` z `` a mame subory ktore boli na diskoch A, W a Z:
 
 ![](images/2022-03-21-20-46-54.png)
@@ -46,6 +52,8 @@ flag: kopia faxu.docx,passwords.txt,poznamky.docx,Strategia_kybernetickej_bezpec
 ## 4 Šifrovanie
 > Prehliadnutie Igorovho zariadenia odhalilo, že išlo aj o súbory, ktoré v najlepšom prípade existujú len na USB. Ako prvý krok je potrebné zistiť použitý spôsob (softvér) šifrovania. Hľadajte vo všetkých dostupných artefaktoch. Kedy bol taký šifrovací softvér stiahnutý? Odpoveď uveďte vo formáte Y-m-d H:i:s a v UTC timezone.
 
+> Body: 6
+
 Vieme ze pouzity sifrovaci software bol VeraCrypt, a odpoved kedy bol stiahnuty skusime najst `Downloads` adresar pre uzivatela Igor. Ten sa ale nenachadza v image disku, ale mame tam $MFT (Windows Master File Table) v ktorom skusime najst metadata z C:\ disku.
 Pouzijeme [MFTExplorer](https://f001.backblazeb2.com/file/EricZimmermanTools/net6/MFTExplorer.zip) a najdeme subor `VeraCrypt Setup 1.25.4.exe` v `C:\Users\Igor\Downloads` kde `Modified On` je cas ked bol subor stiahnuty:
 
@@ -57,6 +65,8 @@ flag: 2022-01-07 17:50:29
 
 ## 5 Veracrypt
 > Teraz keď vieme že ide o veracrypt, môžeme nahliadnuť do inych artefaktov a zamerať sa na podmnožinu informácií. Kedy bolo naposledy veracryptom formátované USB? Odpoveď uveďte vo formáte Y-m-d H:i:s
+
+> Body: 6
 
 Vacisnu info o VeraCrypt artefaktoch sme cerpali z http://web.archive.org/web/20201204131937/https://sparky.tech/tracking-encryption-part-1-veracrypt-usage/
 
@@ -86,6 +96,8 @@ flag: 2022-01-07 18:37:34
 
 ## 6 Mail
 > Počas prehliadania prefetch súborov ste mohli naraziť aj na dôkaz vykonávania OUTLOOK.EXE. Zistite posledné informácie z mailovej komunikácie. Uveďte s kým Igor komunikoval. Odpoveď uveďte ako mailovú adresu v bežnom formáte e.g. sk-cert@cybergame.sk
+
+> Body: 6
 
 Tento flag bol len uz ceresnickou na torte, jednoducho sme otvorili Outlook offline data file `iviechagor@gmail.com.ost` z tirage image ktory sa nachazal v `E:\C\Users\Igor\AppData\Local\Microsoft\Outlook` a zistili s kym komunikoval:
 

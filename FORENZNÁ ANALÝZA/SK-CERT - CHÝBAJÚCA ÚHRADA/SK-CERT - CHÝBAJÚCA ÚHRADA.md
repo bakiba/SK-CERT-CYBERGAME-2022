@@ -5,6 +5,8 @@ Reported Difficulty: 2
 ## 1 Útočník
 > Stala sa firma obeťou nejakého kybernetického útoku? Aká je IP adresa, z ktorej ju útočník napadol? (flag je IP adresa)
 
+> Body: 6
+
 Mame ~500MB csv subor na analyzovanie trafficu, ktory obsahuje info o flow start, flow end, source ip, destination ip a dalsie info ohladom traficu. 
 
 ![](images/2022-04-15-13-29-55.png)
@@ -28,6 +30,8 @@ flag:198.19.122.159
 ## 2 Prienik
 > Útok bol úspešný a útočník urobil čosi zlé na serveri firmy. Aký je čas tohto spojenia? (flag je vo formáte unix timestamp zaokrúhlený nadol na celé sekundy)
 
+> Body: 6
+
 Z predchadzajucej ulohy vidime ze utocnik z IP `198.19.122.159` skusal brute force login maximalne 1500 krat, takze pri tych 1238 pokusoch na sa mu asi podarolo preniknut do `10.120.10.213`. Pozrieme sa blizsie na tie pokusy ci vieme zistit ktory to bol ten uspesny, sql query ktou pouzijeme:
 
 ```
@@ -43,6 +47,8 @@ flag: 1646919719
 
 ## 3 Čo sa zmenilo?
 > Útočník teda využil bruteforce útok na SSH a dostal sa na firemný server. Následne pripravil ďalšiu fázu útoku. Kedy je ním pripravenú zmenu možné pozorovať po prvý raz? (flag je vo formáte unix timestamp zaokrúhlený nadol na celé sekundy)
+
+> Body: 6
 
 Vieme za sa utocnik dostal na `10.120.10.213`, dalej analyzujeme traffic z a do tohto servera a zistujeme:
 
@@ -85,7 +91,11 @@ flag:1646922011
 ## 4 Aktivita
 > Zdá sa, že útočník vynáša von všetky e-maily. Kam skutočne smeruje jeho útok? Ktorá IP adresa vo firme je jeho skutočným cieľom? (flag je IP adresa)
 
+> Body: 6
+
 Toto sa mi nepodarilo zistit, azda su v tom logu vsetky IP. Ani jedna z `10.120.10.x` nebola flag. Chce to asi hlbsiu analyzu.
 
 ## 5 Ako to?
 > Zamknuté Aktivita
+
+> Body: 6

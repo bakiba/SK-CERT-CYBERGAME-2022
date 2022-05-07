@@ -5,14 +5,24 @@ Reported Difficulty: 2
 ## 1 Prvé zmeny
 > Čo malvér vykonáva v prvých krokoch spustenia?
 
+> Body: 6
+
 ## 2 Funkcionalita
 >  Zamknuté Prvé zmeny
+
+> Body: 6
 
 ## 3 Inject
 > Zamknuté Funkcionalita
 
+> Body: 6
+
 ## 4 Prvá časť
 > Zamknuté Inject
 
+> Body: 6
+
 ## 5 Druhá časť
 > Zamknuté Prvá časť
+
+> Body: 6

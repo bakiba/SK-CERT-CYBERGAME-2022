@@ -5,6 +5,8 @@ Reported Difficulty: 2
 ## 1 Podozrivé APK
 > Vieme skontrolovať funkcionalitu a zistiť či aplikácia má nejaké indikátory o spomínanom probléme?
 
+> Body: 6
+
 Stiahneme podozrive apk, otvorime a lubololnom apk analyzatore a hladame flag "SK-CERT" a hned ho aj mame: `SK-CERT{3v1l_k3yb04rd}`
 
 ![](images/2022-03-05-14-56-33.png)
@@ -12,10 +14,16 @@ Stiahneme podozrive apk, otvorime a lubololnom apk analyzatore a hladame flag "S
 ## 2 Funkcionalita
 > APK obsahuje viacero podozrivých funkcii, viete sa na to pozrieť bližšie?
 
+> Body: 6
+
 ## 3 Kľúče
 > Zamknuté Funkcionalita
 
+> Body: 6
+
 ## 4 Finalizácia
 > Zamknuté Kľúče
+
+> Body: 6
 
 

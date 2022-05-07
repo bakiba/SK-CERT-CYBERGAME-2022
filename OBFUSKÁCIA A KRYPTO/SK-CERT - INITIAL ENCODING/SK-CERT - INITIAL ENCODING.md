@@ -5,6 +5,8 @@ Reported Difficulty: 0
 ## 1 Prvá časť
 > Jedná sa o jeden z najbežnejších enkódingov
 
+> Body: 1
+
 Vyzera to na base64 encoding:
 
 ![](images/2022-03-06-16-59-24.png)
@@ -20,6 +22,8 @@ flag: SK-CERT{b453_64_fl4g}
 ## 2 Druhá časť
 > Base64 ste úspešne zvládli, zvládnete aj ďaľšiu výzvu?
 
+> Body: 1
+
 Dalsia cast enkodovania vyzera byt standardny ASCII kod, pozujeme CyberChef pre tuto ulohu:
 
 ![](images/2022-03-06-17-07-29.png)
@@ -30,6 +34,8 @@ flag: SK-CERT{45c11_3nc0d1ng}
 
 ## 3 Tretia časť
 > Tak a touto úlohou prichádzame na záver INITIAL Scenáru. Držíme palce v hre!
+
+> Body: 1
 
 Posledna cast zda sa byt Hex kod:
 

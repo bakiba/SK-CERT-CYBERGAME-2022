@@ -6,6 +6,8 @@ Reported Difficulty: 3
 ## 1 Kill switch
 > Je možné malvér deaktivovať?
 
+> Body: 9
+
 Zo stihnuteho suboru mame file `iodine-infected` a pomocou `file iodine-infected` zistujeme ze je to Linux ELF 64-bit executable, `strings` nam ziadny flag nenasiel. Virustotal nic neudava.
 Google nam hovori ze `iodine` je software ktory umoznuje tunelovat IPv4 data cez DNS server. 
 Po spusteni suboru, vidime ze sa deje nejaky DNS query:
@@ -37,6 +39,8 @@ flag: SK-CERT{h4rdc0r3_4nt1d3bug}
 ## 2 Inject
 > Je potrebné zistiť ako malvér vykonáva svoju ďalšiu fázu.
 
+> Body: 9
+
 Ak pouzijeme [gdb](https://man7.org/linux/man-pages/man1/gdb.1.html) na debugovanie, vidme ze su tam nejake antidebug kontroly:
 
 ![](images/2022-04-18-15-05-39.png)
@@ -50,6 +54,8 @@ Tu moja snaha asi konci... debuging je nieco co sa definitivne musim naucit.
 ## 3 Zadné vrátka	
 > Ako sa útočníci dotanú do siete?
 
+> Body: 9
+
 Tu som skusil pouzit flag co som naisle pri mojom prvom pokuse pri hladani riesenia prvej ulohy, a zobralo to.
 
 ```
@@ -59,5 +65,9 @@ flag: SK-CERT{dn5_3ncryp70r}
 ## 4 Fáza 2
 > Zamknuté Inject
 
+> Body: 9
+
 ## 5 ET volá domov
 > Zamknuté Fáza 2
+
+> Body: 9
