@@ -152,7 +152,7 @@ Takže, takto sa dostaneme ďalej do `encrypt_file` funkcie, ktorá podlá anal�
 
 ![](images/2022-04-19-16-27-23.png)
 
-Skúšame krokovať cez `gdb`, nastavíme break point najprv na `main`, potom na `envrypt_file` a nakoniec sa dostaneme do `encrypt` a krokujeme do toho `for` loopu, a tento krát využijeme príkaz na vykonanie viac krokov naraz:
+Skúšame krokovať cez `gdb`, nastavíme break point najprv na `main`, potom na `encrypt_file` a nakoniec sa dostaneme do `encrypt` a krokujeme do toho `for` loopu, a tento krát využijeme príkaz na vykonanie viac krokov naraz:
 
 ````
 python [gdb.execute('ni') for x in range(12)]
