@@ -7,7 +7,7 @@ Reported Difficulty: 1
 
 > Body: 3
 
-Z priloženého odkazu sa nám stiahne `documents.zip` v ktorom je súbor `bitcoin.dot`, zistime že je to OpenOffice dokument, a ako to býva v týchto hrách, asi to bude nejaké škodlivé makro. Takže po nainštalovaní LibreOffice a povolení makrá, otvárame bitcoin.odt a hneď máme upozornenie, že makrá môžu obsahovať vírus. Po otvorení makra, získavame náš prvý flag:
+Z priloženého odkazu sa nám stiahne `documents.zip` v ktorom je súbor `bitcoin.odt`, zistime že je to OpenOffice dokument, a ako to býva v týchto hrách, asi to bude nejaké škodlivé makro. Takže po nainštalovaní LibreOffice a povolení makrá, otvárame bitcoin.odt a hneď máme upozornenie, že makrá môžu obsahovať vírus. Po otvorení makra, získavame náš prvý flag:
 
 ![](images/2022-03-05-14-00-36.png)
 
