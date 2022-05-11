@@ -11,6 +11,8 @@ Pripomínam, že cybersecurity je mojou záľubou a hobby, neživím sa tým, so
 
 Tiež sa ospravedlňujem za gramatické chyby, na škole som sa neučil Slovenčinu. Ale gramatické chyby v zadaniach nie sú moje :)
 
+***Na niektoré write-upy prispeli iný súťažiaci po skončení súťaže. Vďaka!***
+
 # Obsah
 
 Hra pozostávala z niekoľko vetiev (tematických oblasti) a každá vetva mala niekoľko scenárov v rámci ktorých bolo treba vyriešiť 3 až 7 úloh. Na vyriešenie každej úlohy bolo treba nájsť vlajku (`flag`), ktorá bola vo formáte `SK-CERT{abc}`. Nasledujúce úlohy boli zamknuté, čo znamenalo, že keď sa vyrieši predchádzajúca úloha tak sa odomkne ďalšia, teda postup riešenia bol sekvenčný.
@@ -46,6 +48,6 @@ Tento repository je štruktúrovaný podlá vetiev a scenárov, tak ako boli v h
 * [SK-CERT - INITIAL: APT 0XFF](OSINT%20ANALÝZA/SK-CERT%20-%20INITIAL%20APT%200XFF/SK-CERT%20-%20INITIAL%20APT%200XFF.md) (3 z 3 úloh vyriešených)
 * [SK-CERT - PREDAJ BOTNETU](OSINT%20ANALÝZA/SK-CERT%20-%20PREDAJ%20BOTNETU/SK-CERT%20-%20PREDAJ%20BOTNETU.md) (5 z 5 úloh vyriešených)
 * [SK-CERT - RANSOMVÉR](OSINT%20ANALÝZA/SK-CERT%20-%20RANSOMVÉR/SK-CERT%20-%20RANSOMVÉR.md) (5 z 5 úloh vyriešených)
-* [SK-CERT - STRATENÁ OSOBA](OSINT%20ANALÝZA/SK-CERT%20-%20STRATENÁ%20OSOBA/SK-CERT%20-%20STRATENÁ%20OSOBA.md) (4 z 5 úloh vyriešených)
+* [SK-CERT - STRATENÁ OSOBA](OSINT%20ANALÝZA/SK-CERT%20-%20STRATENÁ%20OSOBA/SK-CERT%20-%20STRATENÁ%20OSOBA.md) (5 z 5 úloh vyriešených)
 
 

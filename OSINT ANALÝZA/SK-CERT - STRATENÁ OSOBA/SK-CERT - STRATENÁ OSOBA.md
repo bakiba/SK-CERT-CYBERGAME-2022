@@ -54,7 +54,7 @@ A zaujímavý článok, kde spomína bistro, ktoré ponuka BBQ špeciality, ktor
 
 ![](images/2022-05-03-21-24-38.png)
 
-Sťahujeme súbor z https://drive.google.com/file/d/1hWS-NOx5LnVoucMi534X4U6oDHrl2mp0/view, `John the Ripper` beží už pol dna a nič...
+Sťahujeme súbor z https://drive.google.com/file/d/1hWS-NOx5LnVoucMi534X4U6oDHrl2mp0/view, `John the Ripper` beží už pol dňa a nič...
 
 Skúšam medzitým Google query `bistro barbecue špeciality` a pozerám prvý výsledok `Smokin' Bob Barbeuce` a v komentároch čo nevidím... náš Jaromir tam prispel:
 
@@ -143,5 +143,34 @@ flag: SK-CERT{pr377y_4w3s0m3_bbq}
 > Je potrebné zistiť kde sa jaromir nachádzal naposledy.
 
 > Body: 9
+
+*K write-up tejto úlohy dodal poznámky súťažiaci ktorý chcel zostať anonymný. Vďaka!*
+
+Riešenie poslednej úlohy sa nachádza v príspevku https://www.reddit.com/user/Winter-Eye5522/comments/t3pwvx/prekr%C3%A1sne_tatry_po_skcertpr377y_4w3s0m3_bbq/. Podlá mňa, zámer bol nájsť tento príspevok iba ak niekto dal do vyhľadávača flag z predchádzajúcej úlohy, ináč podlá ostatných kľúčových slov to bolo skoro nemožne.
+
+![](images/2022-05-11-16-48-18.png)
+
+Query ktorá nájde tento príspevok je "tatry bbq" priamo v reddit sarchboxe:
+
+![](images/2022-05-11-19-55-51.png)
+
+Po otvorení príspevku vidíme, že Jaromír postol link na fotku:
+
+![](images/2022-05-11-16-50-17.png)
+
+Otvárame fotku a vidíme krásne Tatry, ale žiadny flag:
+
+![](images/2022-05-11-16-52-39.png)
+
+Tak ako v predchádzajúcej úlohe, pozrieme na EXIF data v ktorých je ukrytý posledný flag:
+
+![](images/2022-05-11-16-55-01.png)
+
+```
+flag: SK-CERT{77ry}
+```
+
+
+
 
 
