@@ -102,7 +102,7 @@ Po skompilovaní a vykonaní kódu nám to vypľuje `Exception java.lang.ClassNo
 
 ![](images/2022-05-09-14-31-55.png)
 
-Dlho som sa snažil ako deserializovať pole bajtov do výsledného objektu, kým som nepochopil, že objekt musí byť deserializovaný v rovnakej štruktúre ako bol serializovaný a musel by som vytvoriť triedu `anysoftkeyboard`, čo bolo už mimo mojich schopností.</br>
+Dlho som sa snažil ako deserializovať pole bajtov do výsledného objektu, kým som nepochopil, že objekt musí byť deserializovaný v rovnakej štruktúre ako bol serializovaný a musel by som vytvoriť triedu `anysoftkeyboard`, čo bolo už mimo mojich schopnosti.</br>
 Nakoniec ma napadlo iba vypísať ten byte array po for loope, pred tým ako sa načíta do ByteArrayInputStream. Pridal som nasledovný kód po for loope:
 
 ```java
@@ -123,11 +123,11 @@ flag: SK-CERT{j4v4_d353r14l1z4t10n}
 
 > Body: 6
 
-V predchádzajúcej úlohe sme deserializáciou dostali nie len flag ale deserializáciu aj atribúty `ks` a `u` objektu `nw`, ktorý sa používa v ďalších dvoch funkciách `xsf()` a `abc()`.
+V predchádzajúcej úlohe sme deserializáciou dostali nie len flag ale aj atribúty `ks` a `u` objektu `nw`, ktorý sa používa v ďalších dvoch funkciách `xsf()` a `abc()`.
 
 ![](images/2022-05-09-18-35-52.png)
 
-Skúsime najprv rozlúštiť funkciu `xsf()`. Pri analýze vidíme, že v podstate nám treba len zistiť `url`, nie je podstatne či je to platné URL a či sa vôbec spojenie uskutočni alebo nie. Tak si funkciu trosku upravíme aby sme dostali ten `url`:
+Skúsime najprv rozlúštiť funkciu `xsf()`. Pri analýze vidíme, že v podstate treba len zistiť `url`, nie je podstatne či je to platné URL a či sa vôbec spojenie uskutočni alebo nie. Tak si funkciu trošku upravíme aby sme dostali ten `url`:
 
 ```java
 private static boolean xsf(String nks) {
@@ -143,7 +143,7 @@ private static boolean xsf(String nks) {
 }
 ```
 
-Samozrejme pridali sme aj tie ďalšie pomocne funkcie `x()` a `r()` a pustili sme našu funkciu s parametrom `DAMhrNI3GvJXaFAC`:
+Samozrejme pridali sme aj tie ďalšie pomocné funkcie `x()` a `r()` a vykonali sme našu funkciu s parametrom `DAMhrNI3GvJXaFAC`:
 
 ```java
 xsf("DAMhrNI3GvJXaFAC");

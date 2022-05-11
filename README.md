@@ -1,11 +1,15 @@
 # Čo je toto
 
-Tento repository je mojou snahou popísať postup môjho riešenia úloh v CTF CYBERGAME od SK-CERT a spol., ktorá sa konala od marca do mája 2022.
+Tento repository je mojou snahou popísať postup môjho riešenia úloh v CTF CYBERGAME od SK-CERT a spol., ktorá sa konala od 1.3.2022 do 10.5.2022.
 
 Viac informácií o hre, pravidlách, štatúte atď.: https://cybergame.sk-cert.sk/
 
 Tento repository obsahuje write-up úloh ktoré sa mi podarilo v tejto súťaži vyriešiť. Hlavnú ideou týchto write-upov je zachovať znalosť a skúsenosti získane v tejto súťaži, a tiež ako učebná pomôcka pre tých ktorým je toto zaujímavé. <br/>
 Postup som dokumentoval takmer počas samotnej investigácie, takže sú tu aj chyby ktoré som spravil, zle cesty ktorými som sa vybral a aj zopár predčasne objavených flagov, ktoré nepatrili k úlohe ktorú som pravé riešil ale ku niektorej z nasledujúcich. 
+
+Pripomínam, že cybersecurity je mojou záľubou a hobby, neživím sa tým, som v tom iba v začiatkoch a toto nie je ukážka "jak se to dělá" ale skôr ako som ja na to prišiel pri študovaní a hraní sa.
+
+Tiež sa ospravedlňujem za gramatické chyby, na škole som sa neučil Slovenčinu. Ale gramatické chyby v zadaniach nie sú moje :)
 
 # Obsah
 
@@ -41,7 +45,7 @@ Tento repository je štruktúrovaný podlá vetiev a scenárov, tak ako boli v h
 
 * [SK-CERT - INITIAL: APT 0XFF](OSINT%20ANALÝZA/SK-CERT%20-%20INITIAL%20APT%200XFF/SK-CERT%20-%20INITIAL%20APT%200XFF.md) (3 z 3 úloh vyriešených)
 * [SK-CERT - PREDAJ BOTNETU](OSINT%20ANALÝZA/SK-CERT%20-%20PREDAJ%20BOTNETU/SK-CERT%20-%20PREDAJ%20BOTNETU.md) (5 z 5 úloh vyriešených)
-* [SK-CERT - RANSOMVÉR](OSINT%20ANALÝZA/SK-CERT%20-%20RANSOMVÉR/SK-CERT%20-%20RANSOMVÉR.md) (1 z 5 úloh vyriešených)
+* [SK-CERT - RANSOMVÉR](OSINT%20ANALÝZA/SK-CERT%20-%20RANSOMVÉR/SK-CERT%20-%20RANSOMVÉR.md) (5 z 5 úloh vyriešených)
 * [SK-CERT - STRATENÁ OSOBA](OSINT%20ANALÝZA/SK-CERT%20-%20STRATENÁ%20OSOBA/SK-CERT%20-%20STRATENÁ%20OSOBA.md) (4 z 5 úloh vyriešených)
 
 
