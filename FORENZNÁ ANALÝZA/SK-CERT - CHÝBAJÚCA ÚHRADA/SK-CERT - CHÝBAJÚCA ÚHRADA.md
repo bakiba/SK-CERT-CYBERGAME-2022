@@ -7,24 +7,24 @@ Reported Difficulty: 2
 
 > Body: 6
 
-Mame ~500MB csv subor na analyzovanie trafficu, ktory obsahuje info o flow start, flow end, source ip, destination ip a dalsie info ohladom traficu. 
+Máme ~500MB csv súbor na analyzovanie sieťového spojenia, ktorý obsahuje info o flow start, flow end, source ip, destination ip a ďalšie info ohľadom spojenia. 
 
 ![](images/2022-04-15-13-29-55.png)
 
-Aj ked naazov suboru je `netflow` a takto nevedel som najst tool online ktory by to vedel zanalyzovat autmaticky... vyzera ze to nie je NewFlow format, kdo vie cim to vygenerovali. Takze skusim to zanalyzovat "manualne"... Excel nepomohol lebo nevedel nalodovat ~6M riadkov, bash tiez moc tu nepomoze, takze idem to nalodovat do SQL. Po importovani suboru do SQL, skusam vygenerovat agregatne data o komunikaci medzi jednotlivymi source a dst IP podla dst portu:
+Aj keď názov súboru je `netflow`, nevedel som nájsť nastroj ktorý by to vedel zanalyzovať automaticky... vyzerá, že to nie je NewFlow formát, kto vie čím to vygenerovali. Takže skúsim to zanalyzovať "manuálne"... Excel nepomohol lebo nevedel načítať ~6M riadkov, `bash/grep/sed` tiež moc tu nepomôže, takže idem to načítať do SQL. Po importovaní súboru do SQL, skúšam vygenerovať agregátne dáta o komunikácii medzi jednotlivými src a dst IP podlá dst portu:
 
-```
+```sql
 select ip_src,ip_dst,port_dst,COUNT(proto)  from netflow group by ip_src,ip_dst,port_dst order by COUNT(proto) desc
 ```
 
-Zaujimavy traffic je z `198.19.122.159` na rozne privatne IPcky na destination port 22 (ssh). Vyzera to podozrivo ako skuska brute force login cez ssh:
+Zaujímavý traffic je z `198.19.122.159` na rôzne privátne IP adresy na destination port 22 (ssh). Vyzerá to podozrivo ako skúška brute force login cez ssh:
 
 ![](images/2022-04-15-13-38-19.png)
 
-Skusame tu IPecku ci to je falg a SUCCESS! Mame prvy flag.
+Skúšame tú IP adresu či to je flag a SUCCESS! Máme prvý flag.
 
 ```
-flag:198.19.122.159
+flag: 198.19.122.159
 ```
 
 ## 2 Prienik
@@ -32,12 +32,12 @@ flag:198.19.122.159
 
 > Body: 6
 
-Z predchadzajucej ulohy vidime ze utocnik z IP `198.19.122.159` skusal brute force login maximalne 1500 krat, takze pri tych 1238 pokusoch na sa mu asi podarolo preniknut do `10.120.10.213`. Pozrieme sa blizsie na tie pokusy ci vieme zistit ktory to bol ten uspesny, sql query ktou pouzijeme:
+Z predchádzajúcej úlohy vidíme, že útočník z IP `198.19.122.159` skúšal brute force login maximálne 1500 krát, takže pri tých 1238 pokusoch sa mu asi podarilo preniknúť do `10.120.10.213`. Pozrieme sa bližšie na tie pokusy či vieme zistiť ktorý to bol ten úspešný, sql query ktorú použijeme:
 
-```
+```sql
 select * from netflow where ip_src = '198.19.122.159' and ip_dst = '10.120.10.213' and port_dst = '22'
 ```
-Z vysledkov query vidime ze pri vacsine konekcii rx_bytes a tx_bytes su medzi 1000 a 5000 bytov, ale jeden vycnieva, ten bude asi successfull login... skusame odoslat `1646919719` ako flag a je to ono!
+Z výsledkov query vidíme, že pri väčšine konfekcií rx_bytes a tx_bytes sú medzi 1000 a 5000 bytov, ale jeden vyčnieva, ten bude asi successfull login... skúšame odoslať `1646919719` ako flag a je to ono!
 
 ![](images/2022-04-15-13-48-51.png)
 
@@ -50,42 +50,42 @@ flag: 1646919719
 
 > Body: 6
 
-Vieme za sa utocnik dostal na `10.120.10.213`, dalej analyzujeme traffic z a do tohto servera a zistujeme:
+Vieme, že sa útočník dostal na `10.120.10.213`, ďalej analyzujeme traffic z a do tohto serveru a zisťujeme:
 
-* pravdepodobne je to mail server kedze vsetky incomming konekcie su na portoch 110 (POP3), 25 (SMTP) a 22 (SSH)
-* vsetky konekcie z toho serveru su na port 25 (SMTP)
-* server je vystaveny neustalemu port probingu
+* pravdepodobne je to mail server keďže všetky prichádzajúce spojenia sú na portoch 110 (POP3), 25 (SMTP) a 22 (SSH)
+* všetky spojenia odchádzajúce z toho serveru sú na port 25 (SMTP)
+* server je vystavený neustálemu port probingu
 
-Kedze do servera nie je ziadna ina konekcia okrem ssh, smtp a pop3, predpoklad ze utocnik nechal nejaky backdoor sa nepotvrdila... backdor by pocuval na nejakom porte (npr. 4444). 
+Keďže do serveru nie je žiadne iné spojenie okrem ssh, smtp a pop3, predpoklad, že útočník nechal nejaký backdoor sa nepotvrdila... backdor by počúval na nejakom porte (napr. 4444). 
 
-Tiez vidime ze server neinicioval ziadnu konekciu okrem smtp, takze ani predpoklad ze utocnik vyniesol data cez ssh smerom von sa nepotvrdila.
+Tiež vidíme, že server neinicioval žiadne spojenie okrem smtp, takže ani predpoklad, že útočník vyniesol dáta cez ssh smerom von sa nepotvrdila.
 
-Skusame teoriu ze utocnik sa pripojil cez ssh z ineho severu:
+Skúšame teóriu, že útočník sa pripojil cez ssh z iného servera:
 
-```
+```sql
 select * from netflow where ip_dst = '10.120.10.213' and port_dst = '22' and tx_bytes > 10000
 ```
-*tx_bytes > 10000 aby sme vylucili nesupesne pokusy ssh brute force*
+*tx_bytes > 10000 aby sme vylúčili neúspešne pokusy ssh brute force*
 
-Z tychto dat zistujeme ze pred utokom, ssh do toho serveru bolo iba z vnutornej siete `10.120.x.x` a po utoku vidime uspesne ssh konekcie z `198.19.x.x`.
+Z týchto dát zisťujeme, že pred útokom, ssh do toho serveru bolo iba z vnútornej siete `10.120.x.x` a po útoku vidíme úspešne ssh spojenie z `198.19.x.x`.
 
-Skusime teda vylucit `10.120.x.x` a mame:
+Skúsime teda vylúčiť `10.120.x.x` a máme:
 
 ![](images/2022-04-15-15-19-04.png)
 
-Kedze je prvy timestamp je nas povodny utok, mozno je ten dalsi timestamp flag? Skusame odoslat `1647182155` a nic... nie je to flag. Takze nebude to ssh trafic, takze nam zostava pozriet sa na iny trafic... vieme ze jediny trafic odchadzajuci z `10.120.10.213` je smtp, pozrieme sa ci nejaky smtp traffic nesmeruje do `198.19.x.x`:
+Keďže prvý timestamp je náš pôvodný útok, možno je ten ďalší timestamp flag? Skúšame odoslať `1647182155` a nič... nie je to flag. Takže nebude to ssh traffic, zostava nám pozrieť sa na iný traffic... vieme, že jediný traffic odchádzajúci z `10.120.10.213` je smtp, pozrieme sa či nejaký smtp traffic nesmeruje do `198.19.x.x`:
 
-```
-select flow_start, flow_end, ip_src, ip_dst,port_dst,rx_bytes,tx_bytes from netflow where ip_src = '10.120.10.213' and ip_dst like '198.19.%'
+```sql
+select flow_start, flow_end, ip_src, ip_dst, port_dst, rx_bytes,tx_bytes from netflow where ip_src = '10.120.10.213' and ip_dst like '198.19.%'
 ```
 
-Z netflow logu vidime smtp traffic na `198.19.13.140` sa poprve vyskytuje 1646922011.20208 (Thursday, 10 March 2022 14:20:11.202) co z casoveho hladiska je po prvom prenikunuti do systemu 1646919719 (Thursday, 10 March 2022 13:41:59).
-Skusame odoslat `1646922011` a mame uspech! Utocnik exfiltuje data cez smpt.
+Z netflow logu vidíme, že smtp traffic na `198.19.13.140` sa po prvé vyskytuje 1646922011.20208 (Thursday, 10 March 2022 14:20:11.202) čo z časového hľadiska je po prvom preniknutí do systému 1646919719 (Thursday, 10 March 2022 13:41:59).
+Skúšame odoslať `1646922011` a máme úspech! Útočník exfiltruje dáta cez smpt.
 
 ![](images/2022-04-15-16-06-26.png)
 
 ```
-flag:1646922011
+flag: 1646922011
 ```
 
 ## 4 Aktivita
@@ -93,9 +93,10 @@ flag:1646922011
 
 > Body: 6
 
-Toto sa mi nepodarilo zistit, azda su v tom logu vsetky IP. Ani jedna z `10.120.10.x` nebola flag. Chce to asi hlbsiu analyzu.
+Toto sa mi nepodarilo zistiť, azda sú v tom logu všetky IP ale ani jedna z `10.120.10.x` nebola flag. Chce to asi hlbšiu analýzu.
 
 ## 5 Ako to?
 > Zamknuté Aktivita
 
 > Body: 6
+

@@ -7,9 +7,13 @@ Reported Difficulty: 2
 
 > Body: 6
 
-Stiahneme podozrivé apk, otvoríme a ľubovoľnom IDE prostredí a hľadáme flag "SK-CERT" a hneď ho aj máme: `SK-CERT{3v1l_k3yb04rd}`
+Stiahneme podozrivé apk, otvoríme a ľubovoľnom IDE prostredí a hľadáme flag "SK-CERT" a hneď ho aj máme:
 
 ![](images/2022-03-05-14-56-33.png)
+
+```
+SK-CERT{3v1l_k3yb04rd}`
+```
 
 ## 2 Funkcionalita
 > APK obsahuje viacero podozrivých funkcii, viete sa na to pozrieť bližšie?
@@ -21,7 +25,7 @@ Po niekoľkých chvíľach prezerania kódu, nachádzame zaujímavú časť v `c
 
 ![](images/2022-05-08-09-31-07.png)
 
-Vidíme tam tri zaujímavé funkcie: `cc`, `xsf` a `abc` a triedu `class K` v ktorej je atribút `flag`:
+Vidíme tam tri zaujímavé funkcie: `cc()`, `xsf()` a `abc()` a triedu `class K` v ktorej je atribút `flag`:
 
 ```java
 class K implements Serializable {
@@ -94,11 +98,11 @@ class klavesnica {
 }
 
 ```
-Po skompilovaní a spustení kódu nám to vypľuje `Exception java.lang.ClassNotFoundException: com.anysoftkeyboard.K`. 
+Po skompilovaní a vykonaní kódu nám to vypľuje `Exception java.lang.ClassNotFoundException: com.anysoftkeyboard.K`. 
 
 ![](images/2022-05-09-14-31-55.png)
 
-Dlho som sa snažil ako deserializovať pole bajtov do výsledného objektu kým som nepochopil, že objekt musí byt deserializovaný v rovnakej štruktúre ako bol serializovaný a musel by som vytvoriť triedu `anysoftkeyboard` čo bolo už mimo mojich schopností.</br>
+Dlho som sa snažil ako deserializovať pole bajtov do výsledného objektu, kým som nepochopil, že objekt musí byť deserializovaný v rovnakej štruktúre ako bol serializovaný a musel by som vytvoriť triedu `anysoftkeyboard`, čo bolo už mimo mojich schopností.</br>
 Nakoniec ma napadlo iba vypísať ten byte array po for loope, pred tým ako sa načíta do ByteArrayInputStream. Pridal som nasledovný kód po for loope:
 
 ```java
@@ -147,7 +151,7 @@ xsf("DAMhrNI3GvJXaFAC");
 
 *Všetok kód som pridával do už existujúceho klavesnica.java súboru, ktorý som vytvoril v predchádzajúcej úlohe a púšťal som to ako celok.*
 
-Po spustení kódu máme ďalší flag:
+Po vykonaní kódu máme ďalší flag:
 
 ![](images/2022-05-09-18-46-20.png)
 
@@ -174,7 +178,7 @@ private static void abc(String nu) {
     System.out.println("2nd url: " + u_s);
 }
 ```
-Po spustení funkcie s parametrom `mNbXxc5loVDIGkQx`:
+Po vykonaní funkcie s parametrom `mNbXxc5loVDIGkQx`:
 
 ```java
 abc("mNbXxc5loVDIGkQx");
