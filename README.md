@@ -13,6 +13,8 @@ Tiež sa ospravedlňujem za gramatické chyby, na škole som sa neučil Slovenč
 
 ***Na niektoré write-upy prispeli iný súťažiaci po skončení súťaže. Vďaka!***
 
+:question: Otázky, nápady, názory píšte do [Diskusie](https://github.com/bakiba/SK-CERT-CYBERGAME-2022/discussions)
+
 # Obsah
 
 Hra pozostávala z niekoľko vetiev (tematických oblasti) a každá vetva mala niekoľko scenárov v rámci ktorých bolo treba vyriešiť 3 až 7 úloh. Na vyriešenie každej úlohy bolo treba nájsť vlajku (`flag`), ktorá bola vo formáte `SK-CERT{abc}`. Nasledujúce úlohy boli zamknuté, čo znamenalo, že keď sa vyrieši predchádzajúca úloha tak sa odomkne ďalšia, teda postup riešenia bol sekvenčný.
