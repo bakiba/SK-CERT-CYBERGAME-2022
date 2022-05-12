@@ -11,7 +11,7 @@ Pripomínam, že cybersecurity je mojou záľubou a hobby, neživím sa tým, so
 
 Tiež sa ospravedlňujem za gramatické chyby, na škole som sa neučil Slovenčinu. Ale gramatické chyby v zadaniach nie sú moje :)
 
-***Na niektoré write-upy prispeli iný súťažiaci po skončení súťaže. Vďaka!***
+:exclamation: *Na niektoré write-upy prispeli iný súťažiaci po skončení súťaže. Vďaka!*
 
 :question: Otázky, nápady, názory píšte do [Diskusie](https://github.com/bakiba/SK-CERT-CYBERGAME-2022/discussions)
 
@@ -35,7 +35,7 @@ Tento repository je štruktúrovaný podlá vetiev a scenárov, tak ako boli v h
 * [SK-CERT - INITIAL: FTP SERVER](FORENZNÁ%20ANALÝZA/SK-CERT%20-%20INITIAL%20FTP%20SERVER/SK-CERT%20-%20INITIAL%20FTP%20SERVER.md) (3 z 3 úloh vyriešených)
 * [SK-CERT - DÁTOVÁ ANALÝZA](FORENZNÁ%20ANALÝZA/SK-CERT%20-%20DÁTOVÁ%20ANALÝZA/SK-CERT%20-%20DÁTOVÁ%20ANALÝZA.md) (5 z 5 úloh vyriešených)
 * [SK-CERT - NEZNÁME USB](FORENZNÁ%20ANALÝZA/SK-CERT%20-%20NEZNÁME%20USB/SK-CERT%20-%20NEZNÁME%20USB.md) (6 z 6 úloh vyriešených)
-* [SK-CERT - CHÝBAJÚCA ÚHRADA](FORENZNÁ%20ANALÝZA/SK-CERT%20-%20CHÝBAJÚCA%20ÚHRADA/SK-CERT%20-%20CHÝBAJÚCA%20ÚHRADA.md) (3 z 5 úloh vyriešených)
+* [SK-CERT - CHÝBAJÚCA ÚHRADA](FORENZNÁ%20ANALÝZA/SK-CERT%20-%20CHÝBAJÚCA%20ÚHRADA/SK-CERT%20-%20CHÝBAJÚCA%20ÚHRADA.md) (4 z 5 úloh vyriešených)
 * [SK-CERT - UNIKNUTÁ ŠTATISTIKA](FORENZNÁ%20ANALÝZA/SK-CERT%20-%20UNIKNUTÁ%20ŠTATISTIKA/SK-CERT%20-%20UNIKNUTÁ%20ŠTATISTIKA.md) (1 z 5 úloh vyriešených)
 
 ## OBFUSKÁCIA A KRYPTO
