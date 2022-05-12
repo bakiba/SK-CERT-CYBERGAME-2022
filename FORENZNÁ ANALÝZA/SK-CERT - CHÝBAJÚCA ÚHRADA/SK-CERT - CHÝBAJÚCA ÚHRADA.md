@@ -95,7 +95,7 @@ flag: 1646922011
 
 Toto sa mi nepodarilo zistiť, azda sú v tom logu všetky IP ale ani jedna z `10.120.10.x` nebola flag. Chce to asi hlbšiu analýzu.
 
-*Ďalšie kroky boli pridané po súťaži na základe pomoci od iných súťažiacich ktorým patri vďaka!*
+:exclamation: *Ďalšie kroky boli pridané po súťaži na základe pomoci od iných súťažiacich ktorým patri vďaka!*
 
 Keď sa pozrieme na smtp traffic tak útočník si z firemného mail serveru `10.120.10.213` posiela maily na svoj server `198.19.13.140`. Keďže tento scenár hovorí, že niektoré faktúry neboli uhradene, skúsime predpokladať, že útočník monitoroval mailovú komunikáciu a keď prišla požiadavka na úhradu faktúry od dodávateľa, tak ju zmanipuloval. Požijeme nasledovnú SQL query na zobrazenie komunikácie medzi dvoma mail severmi:
 

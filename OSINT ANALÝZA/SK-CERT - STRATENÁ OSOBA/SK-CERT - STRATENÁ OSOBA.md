@@ -144,7 +144,7 @@ flag: SK-CERT{pr377y_4w3s0m3_bbq}
 
 > Body: 9
 
-*K write-up tejto úlohy dodal poznámky súťažiaci ktorý chcel zostať anonymný. Vďaka!*
+:exclamation: *K write-up tejto úlohy dodal poznámky súťažiaci ktorý chcel zostať anonymný. Vďaka!*
 
 Riešenie poslednej úlohy sa nachádza v príspevku https://www.reddit.com/user/Winter-Eye5522/comments/t3pwvx/prekr%C3%A1sne_tatry_po_skcertpr377y_4w3s0m3_bbq/. Podlá mňa, zámer bol nájsť tento príspevok iba ak niekto dal do vyhľadávača flag z predchádzajúcej úlohy, ináč podlá ostatných kľúčových slov to bolo skoro nemožne.
 
