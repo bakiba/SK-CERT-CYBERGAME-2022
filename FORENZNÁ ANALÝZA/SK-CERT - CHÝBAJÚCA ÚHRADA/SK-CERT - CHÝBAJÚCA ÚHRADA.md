@@ -124,3 +124,19 @@ flag: 10.120.11.73
 > Už je jasné, že útočník musel pozmeniť faktúru, ktorú dodávateľ zaslal do firmy. Účtovníčka si ju následne stiahla a platbu uhradila na nesprávny účet. Typický business email compromise. Ako je však možné, že sa na to tak dlho neprišlo? Zistite ako a uveďte počet bajtov prenesených v tom spojení, ktoré s touto aktivitou súvisí naposledy. Flag je počet bajtov (súčet rx a tx v danom spojení).    
 
 > Body: 6
+
+:exclamation: *Ďalšie kroky boli pridané po súťaži na základe pomoci od iných súťažiacich ktorým patri vďaka!*
+
+Dôvod prečo sa na to tak dlho neprišlo je lebo útočník manipuloval maily kým mal prístup do mailboxov cez nejaký backdor využívajúci port tcp/110 a mohol čítať, mazať a upravovať maily. Takže musíme nájsť posledný flow kde source IP je `198.19.13.140`, destination IP je `10.120.10.213` a port_dst `110` a dáme to usporiadať od najnovšieho timestampu:
+
+```sql
+select flow_start,flow_end,ip_src, ip_dst, port_dst, rx_bytes,tx_bytes from netflow where  ip_src = '198.19.13.140' and ip_dst = '10.120.10.213' and port_dst = '110' order by flow_start desc
+```
+
+![](images/2022-05-12-21-18-53.png)
+
+Flag je rx_bytes + tx_bytes: 57358 + 65932 = 123290
+
+```
+flag: 123290
+```
