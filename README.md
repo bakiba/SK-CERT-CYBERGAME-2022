@@ -43,7 +43,7 @@ Tento repository je štruktúrovaný podlá vetiev a scenárov, tak ako boli v h
 * [SK-CERT - INITIAL: ENCODING](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20INITIAL%20ENCODING/SK-CERT%20-%20INITIAL%20ENCODING.md) (3 z 3 úloh vyriešených)
 * [SK-CERT - ESOLANG](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20ESOLANG/SK-CERT%20-%20ESOLANG.md) (5 z 5 úloh vyriešených)
 * [SK-CERT - STEGOSTART](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20STEGOSTART/SK-CERT%20-%20STEGOSTART.md) (4 z 4 úloh vyriešených)
-* [SK-CERT - NEPODARENÝ RANSOMVÉR](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20NEPODARENÝ%20RANSOMVÉR/SK-CERT%20-%20NEPODARENÝ%20RANSOMVÉR.md) (0 z 5 úloh vyriešených)
+* [SK-CERT - NEPODARENÝ RANSOMVÉR](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20NEPODARENÝ%20RANSOMVÉR/SK-CERT%20-%20NEPODARENÝ%20RANSOMVÉR.md) (2 z 5 úloh vyriešených)
 
 ## OSINT ANALÝZA
 
@@ -51,5 +51,18 @@ Tento repository je štruktúrovaný podlá vetiev a scenárov, tak ako boli v h
 * [SK-CERT - PREDAJ BOTNETU](OSINT%20ANALÝZA/SK-CERT%20-%20PREDAJ%20BOTNETU/SK-CERT%20-%20PREDAJ%20BOTNETU.md) (5 z 5 úloh vyriešených)
 * [SK-CERT - RANSOMVÉR](OSINT%20ANALÝZA/SK-CERT%20-%20RANSOMVÉR/SK-CERT%20-%20RANSOMVÉR.md) (5 z 5 úloh vyriešených)
 * [SK-CERT - STRATENÁ OSOBA](OSINT%20ANALÝZA/SK-CERT%20-%20STRATENÁ%20OSOBA/SK-CERT%20-%20STRATENÁ%20OSOBA.md) (5 z 5 úloh vyriešených)
+
+
+# Výsledky
+
+Tak súťaž skončila a oficiálne výsledky boli zverejnene na www.cybergame.sk. Nakoniec som skončil na 20. mieste z celkovo 581 hráčov so 417 bodmi (`SittingBull` je môj súťažiaci nick :smiley:).
+
+![](images/2022-05-17-17-32-11.png)
+
+Celkovo som spokojný s výsledkom, bol to pre mňa challage v ktorom som sa okrem veľa frustrácie naučil aj nové veci a zistil slabé stránky na ktorých mám ďalej pracovať. 
+
+Podlá môjho názoru súťaž bola veľmi kvalitná a dobre organizovaná s rozmanitým súborom scenárov rôznych obraznosti, kde si každý vedel nájsť osobnú výzvu.
+
+Na koniec sa chcem poďakovať organizátorom za skvelú prácu a súťažiacim ktorý mi aj po skončení súťaže prispievajú v zlepšeniu mojich znalosti. 
 
 
