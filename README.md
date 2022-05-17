@@ -61,7 +61,7 @@ Tak súťaž skončila a oficiálne výsledky boli zverejnene na www.cybergame.s
 
 Celkovo som spokojný s výsledkom, bol to pre mňa challage v ktorom som sa okrem veľa frustrácie naučil aj nové veci a zistil slabé stránky na ktorých mám ďalej pracovať. 
 
-Podlá môjho názoru súťaž bola veľmi kvalitná a dobre organizovaná s rozmanitým súborom scenárov rôznych obraznosti, kde si každý vedel nájsť osobnú výzvu.
+Podlá môjho názoru súťaž bola veľmi kvalitná a dobre organizovaná s rozmanitým súborom scenárov rôznych obťažnosti, kde si každý vedel nájsť osobnú výzvu.
 
 Na koniec sa chcem poďakovať organizátorom za skvelú prácu a súťažiacim ktorý mi aj po skončení súťaže prispievajú v zlepšeniu mojich znalosti. 
 
