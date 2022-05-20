@@ -2,6 +2,7 @@
 > Ozvala sa nám spoločnosť, ktorá dostala hlásenie že majú infikovaný počítač ransomvérom. Ten je špecifický tým že posiela vygenerovaný privátny klúč na útočníkov server. Prikladáme vám pcap: https://drive.google.com/file/d/13arhVaKNFD_g2qCjuDBrECmpN6MKd4Rw/view?usp=sharing <br/>
 Reported Difficulty: 1
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
 
 ## 1 Kontrola
 > Z dodaného PCAP súboru je potrebné zistiť či naozaj je spoločnosť infikovaná, a pokiaľ áno, tak je potrebné zistiť o aký privátny klúč sa odosiela. Vlajka je IP adresa serveru na ktorý sa klúč odoslal.
