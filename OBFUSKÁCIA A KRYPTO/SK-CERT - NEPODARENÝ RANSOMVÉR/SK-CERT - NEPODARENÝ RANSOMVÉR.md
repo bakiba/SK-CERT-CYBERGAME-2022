@@ -2,6 +2,8 @@
 > Známa skupina Fibonacci FIN rozšírila portfólio svojich služieb o ransomvér. Ransomvér má však našťastie detské chybičky… <br/>
 Reported Difficulty: 3
 
+*Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Neinicializovaný
 > Už prvá iterácia ransomvéru používala silnú symetrickú šifru AES. Autori však pri implementácii vynechali dôležité úvodné kroky… Toto je súbor, zašifrovaný ransomvérom: https://drive.google.com/file/d/1a3GhrCgE2cgppE6CxZW_tw8z709al81j/view?usp=sharing
 
@@ -74,13 +76,44 @@ flag: SK-CERT{r3cyc11n6_g0n3_s0_wr0n6}
 
 > Body: 9
 
+Po rozbalení zadania, máme 3 súbory:
+
+![](images/2022-05-18-20-59-45.png)
+
+Pri tejto úlohe je zaujímavá veľkosť šifrovaného a nešifrovaného súboru. Keď si pozrieme veľkosť súboru `nakupy.txt.ecrypted` je viac ako dvojnásobne nešifrovaného súboru `nakupy.txt`. Šifrovanie samotne nezvyšuje významne veľkosť dát, iba nepatrne kvôli paddingu takže tato viac ako dvojnásobná veľkosť znamená že do šifrovaného súboru boli pripojene nejaké dáta navyše. Čo taká hypotéza že sú to práve šifrovací kľuč a inicializačný vektor? Keď si pozrieme `nakupy.txt` tak ten ma 32 bajtov (plaintext), šifrovací kľuč odhadneme na ďalších 32 bajtov (key) a IV na 16 bajtov čo vychádza presne na 80 bajtov, čomu sa rovná veľkosť `nakupy.txt.ecrypted`, takže hypotéza zatiaľ nebola vyvrátená. <br/>
+Skúsme si pozrieť `nakupy.txt.ecrypted` v hex view a skúsime zvoliť prvých 32 bajtov ako zašifrovaný text, ďalších 32 ako kľuč a ostatných 16 ako IV:
+
+![](images/2022-05-17-21-04-21.png)
+
+Keď to dáme do CyberChefa máme úspešne dešifrovaný `nakupy.txt.ecrypted`:
+
+![](images/2022-05-17-21-05-22.png)
+
+Takže pozrieme sa na `flag.txt.encrypted`, ci môžeme použiť rovnaký postup ako pri `nakupy.txt.encrypted` teda, použiť prvých 32 bajtov ako ciphertext, ďalších 32 ako key a posledných 16 ako IV:
+
+![](images/2022-05-18-21-09-01.png)
+
+Už pri prvom pohľade vidíme že tam máme jeden bajt naviac ako v predchádzajúcom príklade, a keď použijeme rovnaký recept v CyberChefe tak nám to nedá očakávaný výsledok. Skúsime teda počítať odzadu: posledných 16 bajtov IV, potom 32 bajtov kľuč a prvých 33 bajtov ciphertext:
+
+![](images/2022-05-18-21-18-53.png)
+
+Vložíme nasledujúce údaje do CyberChef a získavame ďalší flag:
+
+![](images/2022-05-18-21-19-57.png)
+
+*Poznámka: Mode som skúšal rôzne a CTR zafungovalo v oboch prípadoch*
+
+```
+flag: SK-CERT{7h15_w45_0n1y_0bfu5c473d}
+```
+
 ## 4 Vzory
-> Zamknuté Tajomstvá
+> Novšia verzia ransomvéru nám zašifrovala jedinú kópiu nášho ascii-artu s flagom. Tentoraz je zjavne každý súbor zašifrovaný iným kľúčom, kľúč sa neukladá v súbore a ten správny ku ascii artu žiaľ nemáme k dispozícii. Z disku sme dokázali obnoviť len začiatok pôvodného ascii art súboru. Prikladáme zachránený začiatok a celý zašifrovaný súbor.
 
 > Body: 9
 
 ## 5 Počítač do šrotu
-> Zamknuté Vzory
+> Pri riešení posledného ransomvérového incidentu skupiny Fibonacci Fin sme zažili kurióznu situáciu. Ransomvér zašifroval dva počítače s množstvom krátkych súborov. Jednalo sa o dve kópie tej istej databázy osôb. Z prvého sme vykopírovali všetky zašifrované súbory bez problémov. Druhý počítač haproval a občas sa sám od seba reštartoval, ale napokon sme dokázali zašifrované dáta vykopírovať aj z neho. Počítač zakrátko úplne prestal fungovať, pri štarte hlásil hardvérové chyby a musel ísť do servisu. Súbory z oboch počítačov prikladáme aj s príkladom jedného súboru, ktorý sme dokázali obnoviť zo zálohy.
 
 > Body: 9
 

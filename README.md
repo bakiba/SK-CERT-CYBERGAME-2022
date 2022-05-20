@@ -13,7 +13,9 @@ Tiež sa ospravedlňujem za gramatické chyby, na škole som sa neučil Slovenč
 
 :exclamation: *Na niektoré write-upy prispeli iný súťažiaci po skončení súťaže. Vďaka!*
 
-:question: Otázky, nápady, názory píšte do [Diskusie](https://github.com/bakiba/SK-CERT-CYBERGAME-2022/discussions)
+:question: *Otázky, nápady, názory píšte do [Diskusie](https://github.com/bakiba/SK-CERT-CYBERGAME-2022/discussions)*
+
+:point_right: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
 
 # Obsah
 
@@ -43,7 +45,7 @@ Tento repository je štruktúrovaný podlá vetiev a scenárov, tak ako boli v h
 * [SK-CERT - INITIAL: ENCODING](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20INITIAL%20ENCODING/SK-CERT%20-%20INITIAL%20ENCODING.md) (3 z 3 úloh vyriešených)
 * [SK-CERT - ESOLANG](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20ESOLANG/SK-CERT%20-%20ESOLANG.md) (5 z 5 úloh vyriešených)
 * [SK-CERT - STEGOSTART](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20STEGOSTART/SK-CERT%20-%20STEGOSTART.md) (4 z 4 úloh vyriešených)
-* [SK-CERT - NEPODARENÝ RANSOMVÉR](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20NEPODARENÝ%20RANSOMVÉR/SK-CERT%20-%20NEPODARENÝ%20RANSOMVÉR.md) (2 z 5 úloh vyriešených)
+* [SK-CERT - NEPODARENÝ RANSOMVÉR](OBFUSKÁCIA%20A%20KRYPTO/SK-CERT%20-%20NEPODARENÝ%20RANSOMVÉR/SK-CERT%20-%20NEPODARENÝ%20RANSOMVÉR.md) (3 z 5 úloh vyriešených)
 
 ## OSINT ANALÝZA
 
@@ -55,9 +57,9 @@ Tento repository je štruktúrovaný podlá vetiev a scenárov, tak ako boli v h
 
 # Výsledky
 
-Tak súťaž skončila a oficiálne výsledky boli zverejnene na www.cybergame.sk. Nakoniec som skončil na 20. mieste z celkovo 581 hráčov so 417 bodmi (`SittingBull` je môj súťažiaci nick :smiley:).
+Tak súťaž skončila a oficiálne výsledky boli zverejnene na www.cybergame.sk. Nakoniec som skončil na 27. mieste z celkovo 581 hráčov so 417 bodmi (`SittingBull` je môj súťažiaci nick :smiley:).
 
-![](images/2022-05-17-17-32-11.png)
+![](images/2022-05-20-21-31-16.png)
 
 Celkovo som spokojný s výsledkom, bol to pre mňa challage v ktorom som sa okrem veľa frustrácie naučil aj nové veci a zistil slabé stránky na ktorých mám ďalej pracovať. 
 
