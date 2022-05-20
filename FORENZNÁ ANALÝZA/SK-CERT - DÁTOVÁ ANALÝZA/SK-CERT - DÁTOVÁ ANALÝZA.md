@@ -1,32 +1,32 @@
 # SK-CERT - DÁTOVÁ ANALÝZA
-> Ozvala sa nám spoločnosť, ktorá dostala hlásenie že majú infikovaný počítač ransomvérom. Ten je špecifický tým že posiela vygenerovaný privátny klúč na útočníkov server. Prikladáme vám pcap: https://drive.google.com/file/d/13arhVaKNFD_g2qCjuDBrECmpN6MKd4Rw/view?usp=sharing <br/>
+> Ozvala sa nám spoločnosť, ktorá dostala hlásenie že majú infikovaný počítač ransomvérom. Ten je špecifický tým že posiela vygenerovaný privátny kľuč na útočníkov server. Prikladáme vám pcap: https://drive.google.com/file/d/13arhVaKNFD_g2qCjuDBrECmpN6MKd4Rw/view?usp=sharing <br/>
 Reported Difficulty: 1
 
 :exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
 
 ## 1 Kontrola
-> Z dodaného PCAP súboru je potrebné zistiť či naozaj je spoločnosť infikovaná, a pokiaľ áno, tak je potrebné zistiť o aký privátny klúč sa odosiela. Vlajka je IP adresa serveru na ktorý sa klúč odoslal.
+> Z dodaného PCAP súboru je potrebné zistiť či naozaj je spoločnosť infikovaná, a pokiaľ áno, tak je potrebné zistiť o aký privátny kľuč sa odosiela. Vlajka je IP adresa serveru na ktorý sa kľuč odoslal.
 
 > Body: 3
 
-Otvorime `part1.pcap` vo Wireshark a pustime sa do analyzi. Musim uznat ze som to isiel skratkou a skusal rozne IPecky z komunikacie kym som nenatrafil na tu pravu: `194.182.66.53`
+Otvoríme `part1.pcap` vo Wireshark a pustime sa do analýzy. Musím uznať, že som to išiel skratkou a skúšal rôzne IP adresy z komunikácie kým som nenatrafil na tu pravú: `194.182.66.53`
 
 ```
 flag: 194.182.66.53
 ```
 
 ## 2 Windows?
-> Zdrojová IP počítača ktorý odosielal privátny klúč, patrí lokálnemu počítaču s windows. Je potrebné zistiť ako prenikli do tohto systému. Prikladáme bezpečnostný log v XML formáte.
+> Zdrojová IP počítača ktorý odosielal privátny kľuč, patrí lokálnemu počítaču s WIndows. Je potrebné zistiť ako prenikli do tohto systému. Prikladáme bezpečnostný log v XML formáte.
 https://drive.google.com/file/d/1pmJNCfgnpTCMewCaRioqagYj0_VLcold/view?usp=sharing
 Vlajka je dátum a čas prvého prieniku (Formát Y-m-d H:i:s)
 
 > Body: 3
 
-V tomto kroku mame securty log v xml, otvorime ho v LibreOffice Calc a pozrieme sa na rozne eventy co tam mame. Zo poctu roznych logov vidime vysoky vyskit 4625 co je Failed Login.
+V tomto kroku mame security log v xml, otvoríme ho v Libre Office Calc a pozrieme sa na rôzne eventy čo tam mame. Z počtu rôznych logov vidíme vysoký výskyt 4625 čo je Failed Login.
 
 ![](images/2022-03-06-12-36-54.png)
 
-Ked si vyfiltrujeme vsetky 4625 eventy vidime ze vsetky maju FailureReason `%%2313` co je `Unknown user name or bad password. (529)`, targetuser je `victim` a zdrojom je `LinuxServerWebServer`. Vyzera to na bruteforce login ktory, ako predpokladame ze bol bol enty point, nas flag by mal byt prvy successfull login attempt po poslednom failed:
+Keď si vyfiltrujeme všetky 4625 eventy vidíme, že všetky majú FailureReason `%%2313` čo je `Unknown user name or bad password. (529)`, targetuser je `victim` a zdrojom je `LinuxServerWebServer`. Vyzerá to na bruteforce login ktorý, ak predpokladáme, že bol enty point, náš flag by mal byť prvý successfull login attempt po poslednom failed:
 
 ![](images/2022-03-06-12-55-59.png)
 
@@ -39,7 +39,7 @@ flag: 2022-02-22 20:40:08
 
 > Body: 3
 
-V LibreOffice vyfiltrujeme vsetky eventy s ProcessName a NewProcessName a hladame nieco podozrive po case prveho successfull loginu utocnika a o chvilku to mame:
+V Libre Office vyfiltrujeme všetky eventy s ProcessName a NewProcessName a hľadáme niečo podozrivé po čase prvého successfull loginu útočníka a o chvíľku to máme:
 
 ![](images/2022-03-06-13-10-07.png)
 
@@ -53,15 +53,15 @@ Vlajka je EpochTime prieniku do systému (bez milisekúnd).
 
 > Body: 3
 
-Po otvoreni `web.pcap` suboru, poobzerame sa trosku okolo a uvidime ze sa niekdo snazi prihlasit cez telnet session:
+Po otvorení `web.pcap` súboru, poobzeráme sa trošku okolo a uvidíme, že sa niekto snaží prihlásiť cez telnet session:
 
 ![](images/2022-03-06-15-43-26.png)
 
-Skusime hladat "Login" v paketoch s cielom najst prvy success login, a po niekolko desiatok klikoch narazame na "Last Login" message ktora sa objavuje po uspesnom prihlaseni sa.
+Skúsime hľadať "Login" v paketoch s cieľom nájsť prvý success login, a po niekoľko desiatok klikoch narážame na "Last Login" message ktorá sa objavuje po úspešnom prihlásení sa.
 
 ![](images/2022-03-06-15-48-16.png)
 
-Pre istotu pojdeme este zopar paketov vyssie aby sme sa uistili ze to bol utocnik ktory uhadol login a heslo. Po prezreti zopar desiatok paketov predtym vidime ze utocnik uhadol login `bob` a heslo `adminbob` a paket cislo `6262` mozeme povazovat ako okamih preiniku do systemu ktory ma EpochTime (bez milisekund)
+Pre istotu pôjdeme ešte zopár paketov vyššie aby sme sa uistili, že to bol útočník ktorý uhádol login a heslo. Po prezretí zopár desiatok paketov predtým vidíme, že útočník uhádol login `bob` a heslo `adminbob` a paket číslo `6262` môžeme poväzovať ako okamih prieniku do systému ktorý ma EpochTime (bez milisekúnd)
 
 ![](images/2022-03-06-15-53-52.png)
 
@@ -75,13 +75,10 @@ Vlajka je url odkial útočník exploit stiahol (Formát: www.stránka_exploitu.
 
 > Body: 3
 
-Pri pozerani zopar dalsich paketov, vidime ze utocnik prve co spravil je `wget https://www.exploit-db.com/download/47465`, rychly nahlad do toho url nam potvrdzuje ze ide o Joomla expoit.
+Pri pozeraní zopár ďalších paketov vidíme, že útočník prvé čo spravil je `wget https://www.exploit-db.com/download/47465`, rýchly náhľad do toho url nám potvrdzuje že ide o Joomla expoit.
 
 ![](images/2022-03-06-16-16-09.png)
 
 ```
 flag: www.exploit-db.com/download/47465
 ```
-
-
-
