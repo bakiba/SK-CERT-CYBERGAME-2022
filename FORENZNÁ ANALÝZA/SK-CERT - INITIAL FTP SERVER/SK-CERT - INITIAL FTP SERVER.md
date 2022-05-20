@@ -2,6 +2,8 @@
 > Zákazník nás poprosil o analýzu logu z ftp servera ktorý niekto vyhackoval. Log najdete na: https://drive.google.com/file/d/1py6tEkkzk_2BnFgvqtby-8UVGbnxzE_P/view?usp=sharing <br/>
 Reported Difficulty: 0
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Útočník
 > Z akej IP adresy sa vykonal útok?
 Formát vlajky: IP

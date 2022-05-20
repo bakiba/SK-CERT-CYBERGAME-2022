@@ -2,6 +2,8 @@
 > Dostali sme hlásenie že na stránke ventilsro.github.io vyskakuje podozrivé okno. Mohli by ste to skontrolovať? <br/>
 Reported Difficulty: 2
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Záhadné okno
 > Nietorý použivatelia nám občas nahlásia vyskakovacie okno v strede obrazovky, je potrebné túto aktivitu preveriť.
 

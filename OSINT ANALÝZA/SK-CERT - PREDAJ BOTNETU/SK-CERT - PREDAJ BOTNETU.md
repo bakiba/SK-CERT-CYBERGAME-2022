@@ -2,6 +2,7 @@
 > Z overeného zdroja sme dostali informáciu že zakladateľ botnetu “OctoBotDisaster” predal prístupy. Je potrebné zistiť kto daný botnet kúpil <br/>
 Reported Difficulty: 1 
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
 
 ## 1 Verejný zdroj
 > Je potrebné nájsť informácie o danom botnete

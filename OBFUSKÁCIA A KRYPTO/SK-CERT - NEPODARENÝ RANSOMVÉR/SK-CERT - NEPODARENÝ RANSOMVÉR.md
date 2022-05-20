@@ -2,7 +2,7 @@
 > Známa skupina Fibonacci FIN rozšírila portfólio svojich služieb o ransomvér. Ransomvér má však našťastie detské chybičky… <br/>
 Reported Difficulty: 3
 
-*Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
 
 ## 1 Neinicializovaný
 > Už prvá iterácia ransomvéru používala silnú symetrickú šifru AES. Autori však pri implementácii vynechali dôležité úvodné kroky… Toto je súbor, zašifrovaný ransomvérom: https://drive.google.com/file/d/1a3GhrCgE2cgppE6CxZW_tw8z709al81j/view?usp=sharing

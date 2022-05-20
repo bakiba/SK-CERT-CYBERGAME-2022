@@ -6,6 +6,8 @@ You have 30 days to pay, when the time is up, your PC will be fully destroyed an
 Best regards, Fibonacci FIN <br/>
 Reported Difficulty: 2
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Informácie 
 > Viete potvrdiť dodané informácie?
 

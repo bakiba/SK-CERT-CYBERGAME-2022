@@ -2,6 +2,8 @@
 > Dostali sme hlásenie, že sa rozšíril nový malvér zameraný na windows. Viete zistiť čo malvér spôsobuje? https://drive.google.com/file/d/1bln5pafds06iKWNW6Qvj-2HeYIioTBuP/view?usp=sharing <br/>
 Reported Difficulty: 2
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Prvé zmeny
 > Čo malvér vykonáva v prvých krokoch spustenia?
 

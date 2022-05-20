@@ -3,6 +3,8 @@
 a požiadali nás o analýzu. <br/>
 Reported Difficulty: 3
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Kill switch
 > Je možné malvér deaktivovať?
 

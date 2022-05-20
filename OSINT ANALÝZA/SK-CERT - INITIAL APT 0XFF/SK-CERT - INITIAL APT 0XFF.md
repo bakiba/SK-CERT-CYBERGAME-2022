@@ -2,6 +2,8 @@
 > Objavila sa nová APT skupina, je potrebné zistiť kto sú <br/>
 Reported Difficulty: 0
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Nová APT Skupina
 > Živé.sk publikovalo článok o odhalení novej APT skupiny (APT skupina Fibonacci FIN). Čo všetko viete zistiť o tejto APT skupine zo živé.sk
 

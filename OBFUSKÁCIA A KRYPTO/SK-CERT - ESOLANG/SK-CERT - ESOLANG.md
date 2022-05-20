@@ -2,6 +2,8 @@
 > V rôznych programoch a v maléroch môžu byť ukryté kompilátory na veľmi nezvyčajné jazyky. Tato skupina jazykov sa volá Ezoterické programovacie jazyky, a tento scenár má za úlohu vás oboznámiť s ich existenciou a možno vám do budúcna uľahčiť ich detekciu v malvérovej analýze. Dáta potrebné pre scenár: https://drive.google.com/file/d/1WENWHp_HRx4bEwPXakGQ_rgUuVJj1NRW/view?usp=sharing <br/>
 Reported Difficulty: 1
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 	1 Obrázkový kód
 > Zdá sa vám na tomto obrázku niečo zvláštne?
 

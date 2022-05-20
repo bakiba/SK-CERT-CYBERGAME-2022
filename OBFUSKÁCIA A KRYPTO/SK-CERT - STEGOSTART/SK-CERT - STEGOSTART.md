@@ -2,6 +2,8 @@
 > Tento scenár vás ma oboznámiť so steganografiou a so šifrovaním, na ktoré môžete naraziť aj pri malvérovej analýze. Dáta potrebné pre scenár: https://drive.google.com/file/d/1PjoBjzu_nNKO3D8vzb9af8Wf6l4LKFf-/view?usp=sharing <br/>
 Reported Difficulty: 2
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Bežný obrázok?	
 > Scenár sa začína analýzou tohto obrázku: linka
 

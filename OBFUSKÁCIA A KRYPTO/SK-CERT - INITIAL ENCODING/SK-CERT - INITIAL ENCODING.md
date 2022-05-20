@@ -2,6 +2,8 @@
 > Ako vstupný scenár do tejto témy sme zvolili encoding, aby ste sa oboznámili s rôznymi zápismi textu. Link: https://pastebin.com/npNB3H16 <br/>
 Reported Difficulty: 0
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Prvá časť
 > Jedná sa o jeden z najbežnejších enkódingov
 

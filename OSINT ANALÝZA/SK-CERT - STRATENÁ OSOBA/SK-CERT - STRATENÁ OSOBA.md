@@ -2,6 +2,8 @@
 > Jaromir Beihofner sa začiatkom marca stratil. Je potrebné zistiť, kde sa nachádzal naposledy. <br/>
 Reported Difficulty: 3
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Kto som?
 > Kto vlastne je Jaromir Beihofner
 

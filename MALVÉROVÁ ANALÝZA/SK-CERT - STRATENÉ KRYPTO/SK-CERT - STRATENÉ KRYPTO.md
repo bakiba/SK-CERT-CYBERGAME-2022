@@ -2,6 +2,8 @@
 > Dostali sme hlásenia, že niektorým ľuďom zmizli kryptomeny. Jediná podobnosť medzi týmito hláseniami je tento dokument (Heslo do zip je cybergame2022): https://drive.google.com/file/d/1JxTfveNIuUPP3IPG8xf_sk0oIUX5Tma_/view?usp=sharing <br/>
 Reported Difficulty: 1
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 ODT
 > Je potrebné zistiť či tento dokument obsahuje niečo zaujímavé
 

@@ -2,6 +2,8 @@
 > Zachytili sme šíriace sa APK,  ktoré údajne obsahuje keylogger. Prikladáme vám spomínané APK a je potrebné nad ním spraviť analýzu. Link: https://drive.google.com/file/d/1lAPNcaxAd9tzCCfszW09dzxby6621XzW/view?usp=sharing <br/>
 Reported Difficulty: 2
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Podozrivé APK
 > Vieme skontrolovať funkcionalitu a zistiť či aplikácia má nejaké indikátory o spomínanom probléme?
 

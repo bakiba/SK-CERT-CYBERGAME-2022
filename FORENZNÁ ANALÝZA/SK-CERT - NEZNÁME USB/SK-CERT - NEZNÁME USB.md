@@ -2,6 +2,8 @@
 > Neregistrované USB so šifrovaným obsahom bolo nájdené v priestoroch firmy. Nakolko v minulosti sa preukázalo, že boli vynášané informácie prostredníctvom externým médií, vnútorná politika nedovoluje používanie neregistrovanych prenosových médií, je potrebné preveriť celú situáciu. Prvotné overovanie komunikáciou so zamestnancami neprinieslo žiadne ovocie a tak je nevyhnutné vykonať dôkladne hĺbkovú forenziu zariadenia.<br/>
 Reported Difficulty: 2
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Identifikácia
 > Nájdené zašifrované USB nemá vlastníka takže je potrebné postupne zistiť do ktorých počítačoch bolo USB pripojené. Máte k dispozícii ‘registry hives’ z každého počítača na oddelení a hľadajte na základe daného sériového čísla USB: 1C6F654E3FD0E2A019127566.
 https://drive.google.com/file/d/10fj5CzVbMdXhpZzbW-SipU1DJZjd1VN1/view?usp=sharing
