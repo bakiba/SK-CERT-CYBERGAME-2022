@@ -2,6 +2,8 @@
 > Riaditeľ firmy mal nečakaný telefonát od dodávateľa. Dodávateľ sa sťažuje, že im dlžia peniaze, ale podľa firmy je všetko v poriadku. Stala sa firma obeťou podvodu? Prikladáme vám sietové spojenia za posledný mesiac: https://drive.google.com/file/d/1uJweF9ns2lwNRdDzRnic1kiZUJZjqERi/view?usp=sharing
 Reported Difficulty: 2
 
+:exclamation: *Súbory a zadania z tejto súťaže môžete stiahnuť z https://ulozto.net/file/9qLDe5asaCHJ/*
+
 ## 1 Útočník
 > Stala sa firma obeťou nejakého kybernetického útoku? Aká je IP adresa, z ktorej ju útočník napadol? (flag je IP adresa)
 

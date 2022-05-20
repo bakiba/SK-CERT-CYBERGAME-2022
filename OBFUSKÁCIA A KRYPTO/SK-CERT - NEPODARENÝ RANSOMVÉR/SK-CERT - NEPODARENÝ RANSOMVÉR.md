@@ -80,7 +80,7 @@ Po rozbalení zadania, máme 3 súbory:
 
 ![](images/2022-05-18-20-59-45.png)
 
-Pri tejto úlohe je zaujímavá veľkosť šifrovaného a nešifrovaného súboru. Keď si pozrieme veľkosť súboru `nakupy.txt.ecrypted` je viac ako dvojnásobne nešifrovaného súboru `nakupy.txt`. Šifrovanie samotne nezvyšuje významne veľkosť dát, iba nepatrne kvôli paddingu takže tato viac ako dvojnásobná veľkosť znamená že do šifrovaného súboru boli pripojene nejaké dáta navyše. Čo taká hypotéza že sú to práve šifrovací kľuč a inicializačný vektor? Keď si pozrieme `nakupy.txt` tak ten ma 32 bajtov (plaintext), šifrovací kľuč odhadneme na ďalších 32 bajtov (key) a IV na 16 bajtov čo vychádza presne na 80 bajtov, čomu sa rovná veľkosť `nakupy.txt.ecrypted`, takže hypotéza zatiaľ nebola vyvrátená. <br/>
+Pri tejto úlohe je zaujímavá veľkosť šifrovaného a nešifrovaného súboru. Keď si pozrieme veľkosť súboru `nakupy.txt.ecrypted` je viac ako dvojnásobne nešifrovaného súboru `nakupy.txt`. Šifrovanie samotne nezvyšuje významne veľkosť dát, iba nepatrne kvôli paddingu takže táto viac ako dvojnásobná veľkosť znamená, že do šifrovaného súboru boli pripojene nejaké dáta navyše. Čo taká hypotéza, že sú to práve šifrovací kľuč a inicializačný vektor? Keď si pozrieme `nakupy.txt` tak ten má 32 bajtov (plaintext), šifrovací kľuč odhadneme na ďalších 32 bajtov (key) a IV na 16 bajtov čo vychádza presne na 80 bajtov, čomu sa rovná veľkosť `nakupy.txt.ecrypted`, takže hypotéza zatiaľ nebola vyvrátená. <br/>
 Skúsme si pozrieť `nakupy.txt.ecrypted` v hex view a skúsime zvoliť prvých 32 bajtov ako zašifrovaný text, ďalších 32 ako kľuč a ostatných 16 ako IV:
 
 ![](images/2022-05-17-21-04-21.png)
@@ -89,11 +89,11 @@ Keď to dáme do CyberChefa máme úspešne dešifrovaný `nakupy.txt.ecrypted`:
 
 ![](images/2022-05-17-21-05-22.png)
 
-Takže pozrieme sa na `flag.txt.encrypted`, ci môžeme použiť rovnaký postup ako pri `nakupy.txt.encrypted` teda, použiť prvých 32 bajtov ako ciphertext, ďalších 32 ako key a posledných 16 ako IV:
+Takže pozrieme sa na `flag.txt.encrypted`, či môžeme použiť rovnaký postup ako pri `nakupy.txt.encrypted` teda, použiť prvých 32 bajtov ako ciphertext, ďalších 32 ako key a posledných 16 ako IV:
 
 ![](images/2022-05-18-21-09-01.png)
 
-Už pri prvom pohľade vidíme že tam máme jeden bajt naviac ako v predchádzajúcom príklade, a keď použijeme rovnaký recept v CyberChefe tak nám to nedá očakávaný výsledok. Skúsime teda počítať odzadu: posledných 16 bajtov IV, potom 32 bajtov kľuč a prvých 33 bajtov ciphertext:
+Už pri prvom pohľade vidíme, že tam máme jeden bajt naviac ako v predchádzajúcom príklade, a keď použijeme rovnaký recept v CyberChefe tak nám to nedá očakávaný výsledok. Skúsime teda počítať odzadu: posledných 16 bajtov IV, potom 32 bajtov kľuč a prvých 33 bajtov ciphertext:
 
 ![](images/2022-05-18-21-18-53.png)
 
