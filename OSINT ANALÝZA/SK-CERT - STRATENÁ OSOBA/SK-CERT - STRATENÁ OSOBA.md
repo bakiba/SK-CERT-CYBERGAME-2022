@@ -9,6 +9,9 @@ Reported Difficulty: 3
 
 > Body: 9
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Ah.. neznášam keď musím zakladať Facebook profil...našťastie je prvý flag verejný.
 
 ![](images/2022-03-06-17-35-50.png)
@@ -16,11 +19,15 @@ Ah.. neznášam keď musím zakladať Facebook profil...našťastie je prvý fla
 ```
 flag: SK-CERT{50_7h15_15_m3}
 ```
+</details>
 
 ## 2 Cestopis
 > Jaromir sa rád podelil o svoje cestovatelské zážitky
 
 > Body: 9
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Predpokladám, že tu treba nájsť Jaromirovu stránku ci blog. Skúšal som rôzne Google query a web.archive.org ale sa mi nepodarilo. Pri prezeraní Facebook profilu vidíme odkaz na `jaromirbeihofner.github.io`
 
@@ -38,11 +45,15 @@ Skúsime sa pozrieť či `jaromirbeihofner.github.io` je vo web.archive a bingo:
 ```
 flag: SK-CERT{4rch1v3_0rg_15_5tr0ng}
 ```
+</details>
 
 ## 3 Archív
 > Čo všetko vieme získať zo stránky?
 
 > Body: 9
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Z archívu stránky sú zaujímavé informácie o zrušení stránky z dna 25.02.2022:
 
@@ -92,11 +103,15 @@ Otvárame `flag.txt` a konečne:
 ```
 flag: SK-CERT{r4r_p455w0rd_cr4ck3d}
 ```
+</details>
 
 ## 4 Obľúbené miesto
 > Jaromir zdieľal fotku chutného jedla, vieme zistiť o tejto fotke viacej?
 
 > Body: 9
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Aj keď som flag pre tuto úlohu našiel už v predchádzajúcej úlohe, ideme skúsiť cestu ktorú pre nás tvorcovia učili.
 Otvárame `photo.jpg` z rar súboru a skúšame Google Image Search. Tento nám moc nepomohol, žiadny konkrétny bistro ako by som očakával. 
@@ -140,11 +155,15 @@ Podlá týchto informácií môžeme usúdiť, že Jaromir bol v `Smokin' Bob Ba
 ```
 flag: SK-CERT{pr377y_4w3s0m3_bbq}
 ```
+</details>
 
 ## 5 Posledné miesto
 > Je potrebné zistiť kde sa jaromir nachádzal naposledy.
 
 > Body: 9
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 :exclamation: *K write-up tejto úlohy dodal poznámky súťažiaci ktorý chcel zostať anonymný. Vďaka!*
 
@@ -171,6 +190,7 @@ Tak ako v predchádzajúcej úlohe, pozrieme na EXIF data v ktorých je ukrytý 
 ```
 flag: SK-CERT{77ry}
 ```
+</details>
 
 
 

@@ -9,18 +9,25 @@ Reported Difficulty: 2
 
 > Body: 6
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Stiahneme podozrivé apk, otvoríme a ľubovoľnom IDE prostredí a hľadáme flag "SK-CERT" a hneď ho aj máme:
 
 ![](images/2022-03-05-14-56-33.png)
 
 ```
-SK-CERT{3v1l_k3yb04rd}`
+SK-CERT{3v1l_k3yb04rd}
 ```
+</details>
 
 ## 2 Funkcionalita
 > APK obsahuje viacero podozrivých funkcii, viete sa na to pozrieť bližšie?
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Pri tejto úlohe som použil tool `jadx-gui-1.3.4-with-jre-win.zip` z https://github.com/skylot/jadx na prezeranie zdrojového Java kódu.<br/>
 Po niekoľkých chvíľach prezerania kódu, nachádzame zaujímavú časť v `com.anysoftkeyboard.AnySoftKeyboard` vo funkcii `onNonFunctionKey`:
@@ -119,11 +126,15 @@ A dostal ďalší flag:
 ```
 flag: SK-CERT{j4v4_d353r14l1z4t10n}
 ```
+</details>
 
 ## 3 Kľúče
 > Vďaka analýze deserializácie ste sa dostali ďalej. Aké ďalšie veci viete získať?
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 V predchádzajúcej úlohe sme deserializáciou dostali nie len flag ale aj atribúty `ks` a `u` objektu `nw`, ktorý sa používa v ďalších dvoch funkciách `xsf()` a `abc()`.
 
@@ -160,11 +171,15 @@ Po vykonaní kódu máme ďalší flag:
 ```
 flag: SK-CERT{k1ll_5w1tch_1mpl3m3nt3d}
 ```
+</details>
 
 ## 4 Finalizácia
 > Vyzerá to tak, že aplikácia obsahuje “killswitch”. Teraz je potrebné zistiť kam posieľa data.
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 V tejto úlohe postupujeme podobne ako pri predchádzajúcej, analyzujeme funkciu `abc()` vidíme, že tam ten argument `key` a `if buffer.size() > 20` je iba návnada a môžeme to vyhodiť, zostava nám iba tento kód:
 
@@ -193,6 +208,7 @@ máme finálny flag:
 ```
 flag: SK-CERT{f1n4l_4pk_fl4g}
 ```
+</details>
 
 
 

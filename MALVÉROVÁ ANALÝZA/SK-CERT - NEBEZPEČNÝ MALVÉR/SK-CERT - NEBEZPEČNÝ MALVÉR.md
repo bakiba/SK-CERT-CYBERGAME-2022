@@ -10,6 +10,9 @@ Reported Difficulty: 3
 
 > Body: 9
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Zo stihnutého súboru máme file `iodine-infected` a pomocou `file iodine-infected` zisťujeme, že je to Linux ELF 64-bit executable. `strings` nám žiadny flag nenašiel. Virustotal nič neudáva.
 Google nám hovorí, že `iodine` je software ktorý umožňuje tunelovať IPv4 dáta cez DNS server. 
 Po spustení súboru, vidíme, že sa deje nejaký DNS query:
@@ -37,11 +40,15 @@ Problém ako donútiť aby curl vrátilo `0` som vyriešil pridaním `lnjkabnskl
 ```
 flag: SK-CERT{h4rdc0r3_4nt1d3bug}
 ```
+</details>
 
 ## 2 Inject
 > Je potrebné zistiť ako malvér vykonáva svoju ďalšiu fázu.
 
 > Body: 9
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Ak použijeme [gdb](https://man7.org/linux/man-pages/man1/gdb.1.html) na debugovanie, viďme, že sú tam nejaké antidebug kontroly:
 
@@ -52,17 +59,22 @@ Z kódu vidím, že je tam funkcia, ktorá zisťuje `/proc/self/status` a pri tr
 ![](images/2022-04-18-16-17-53.png)
 
 Tu moja snaha asi konci... debuging je niečo čo sa definitívne musím naučiť. 
+</details>
 
 ## 3 Zadné vrátka   
 > Ako sa útočníci dotanú do siete?
 
 > Body: 9
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Tu som skúsil použiť flag čo som našiel pri mojom prvom pokuse pri hľadaní riešenia prvej úlohy, a zobralo to.
 
 ```
 flag: SK-CERT{dn5_3ncryp70r}
 ```
+</details>
 
 ## 4 Fáza 2
 > Zamknuté Inject

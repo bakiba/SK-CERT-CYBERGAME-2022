@@ -9,6 +9,9 @@ Reported Difficulty: 0
 
 > Body: 1
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Vyhladame uvedeny clanok na [zive.sk](https://zive.aktuality.sk/clanok/fl21n24/nova-skupina-fibonacci-fin-utoci-na-siete-hotelov-monitoruje-svetovych-politikov/) a hladame `SK-CERT`:
 
 ![](images/2022-03-06-17-15-41.png)
@@ -16,11 +19,15 @@ Vyhladame uvedeny clanok na [zive.sk](https://zive.aktuality.sk/clanok/fl21n24/n
 ```
 flag: SK-CERT{r3c0nn41554nc3}
 ```
+</details>
 
 ## 2 Druhá časť
 > Zistite, či táto APT skupina napadla nejakú Slovenskú firmu.
 
 > Body: 1
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Toto bolo dobre, mohlo to spustit hodiny vyhladavania na googly... a stacilo pozriet do komentov k clanku:
 
@@ -29,11 +36,15 @@ Toto bolo dobre, mohlo to spustit hodiny vyhladavania na googly... a stacilo poz
 ```
 flag: SK-CERT{k4ff3b0t}
 ```
+</details>
 
 ## 3 Odporúčania
 > Dajte kaviarni odporúčania, čo urobiť. Živé.sk už na túto tému publikovala článok.
 
 > Body: 1
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Kedze aj ja chcem taky mlyncek tak som hned zacal googlit :)
 
@@ -46,3 +57,4 @@ V dalsom clanku od [zive.sk](https://zive.aktuality.sk/clanok/9g5vm0v/kaviarne-v
 ```
 flag: SK-CERT{4ft4rupgr4d3}
 ```
+</details>

@@ -9,6 +9,9 @@ Reported Difficulty: 2
 
 > Body: 6
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Máme ~500MB csv súbor na analyzovanie sieťového spojenia, ktorý obsahuje info o flow start, flow end, source ip, destination ip a ďalšie info ohľadom spojenia. 
 
 ![](images/2022-04-15-13-29-55.png)
@@ -28,11 +31,15 @@ Skúšame tú IP adresu či to je flag a SUCCESS! Máme prvý flag.
 ```
 flag: 198.19.122.159
 ```
+</details>
 
 ## 2 Prienik
 > Útok bol úspešný a útočník urobil čosi zlé na serveri firmy. Aký je čas tohto spojenia? (flag je vo formáte unix timestamp zaokrúhlený nadol na celé sekundy)
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Z predchádzajúcej úlohy vidíme, že útočník z IP `198.19.122.159` skúšal brute force login maximálne 1500 krát, takže pri tých 1238 pokusoch sa mu asi podarilo preniknúť do `10.120.10.213`. Pozrieme sa bližšie na tie pokusy či vieme zistiť ktorý to bol ten úspešný, sql query ktorú použijeme:
 
@@ -46,11 +53,15 @@ Z výsledkov query vidíme, že pri väčšine konfekcií rx_bytes a tx_bytes s�
 ```
 flag: 1646919719
 ```
+</details>
 
 ## 3 Čo sa zmenilo?
 > Útočník teda využil bruteforce útok na SSH a dostal sa na firemný server. Následne pripravil ďalšiu fázu útoku. Kedy je ním pripravenú zmenu možné pozorovať po prvý raz? (flag je vo formáte unix timestamp zaokrúhlený nadol na celé sekundy)
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Vieme, že sa útočník dostal na `10.120.10.213`, ďalej analyzujeme traffic z a do tohto serveru a zisťujeme:
 
@@ -89,11 +100,15 @@ Skúšame odoslať `1646922011` a máme úspech! Útočník exfiltruje dáta cez
 ```
 flag: 1646922011
 ```
+</details>
 
 ## 4 Aktivita
 > Zdá sa, že útočník vynáša von všetky e-maily. Kam skutočne smeruje jeho útok? Ktorá IP adresa vo firme je jeho skutočným cieľom? (flag je IP adresa)
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Toto sa mi nepodarilo zistiť, azda sú v tom logu všetky IP ale ani jedna z `10.120.10.x` nebola flag. Chce to asi hlbšiu analýzu.
 
@@ -121,11 +136,15 @@ select flow_start, flow_end, ip_src, ip_dst, port_dst, rx_bytes,tx_bytes from ne
 ```
 flag: 10.120.11.73
 ```
+</details>
 
 ## 5 Ako to?
 > Už je jasné, že útočník musel pozmeniť faktúru, ktorú dodávateľ zaslal do firmy. Účtovníčka si ju následne stiahla a platbu uhradila na nesprávny účet. Typický business email compromise. Ako je však možné, že sa na to tak dlho neprišlo? Zistite ako a uveďte počet bajtov prenesených v tom spojení, ktoré s touto aktivitou súvisí naposledy. Flag je počet bajtov (súčet rx a tx v danom spojení).    
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 :exclamation: *Ďalšie kroky boli pridané po súťaži na základe pomoci od iných súťažiacich ktorým patri vďaka!*
 
@@ -142,3 +161,4 @@ Flag je rx_bytes + tx_bytes: 57358 + 65932 = 123290
 ```
 flag: 123290
 ```
+</details>

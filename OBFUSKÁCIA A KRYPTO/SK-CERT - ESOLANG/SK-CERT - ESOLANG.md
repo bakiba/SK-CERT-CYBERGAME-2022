@@ -9,6 +9,9 @@ Reported Difficulty: 1
 
 > Body: 3
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Stahujeme fakt zvlasny obrazok:
 
 ![](images/2022-04-21-10-22-06.png)
@@ -20,11 +23,15 @@ Po trosku googlenia o ezoterickych kodoch, sa nam pozdavalo ze toto bude `piet` 
 ```
 flag: SK-CERT{1m4g3_pr0gr4m}
 ```
+</details>
 
 ## 2 [][(![]+[])
 > Ako je možné že tieto znaky javascript vykoná?
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Dalsia uloha, pozerame co to je na https://jsfiddle.net/wngjsvcq/
 
@@ -38,12 +45,16 @@ Bolo treba zvolit JSFuck `v0.5.0` a zaskrtnut `With eval`:
 ```
 flag: SK-CERT{wh47_7h3_j5fu*k}
 ```
+</details>
 
 ## 3 \&nbsp;
 
 Obsah na https://pastebin.com/KmBy042V sa pozdava byt prazdny ale vidime ze tam je velkost suboru ~140KB takze tam nieco non-printable je. 
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 ![](images/2022-03-10-18-43-17.png)
 
@@ -58,11 +69,15 @@ Po nejakom case googlenie zistujeme ze je dalsi z ezoterickyck kodov - `Whitespa
 ```
 flag: SK-CERT{1nv151bl3_wh1735p4c3_c0d3}
 ```
+</details>
 
 ## 4 ++>-]<---.<<
 > Dávajte si pozor, aby vás z toho nerozbolel mozog
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Dalsi z exemplarov je `Brainfuck` a hned pouzijeme decoder na https://www.dcode.fr/brainfuck-language:
 
@@ -71,11 +86,15 @@ Dalsi z exemplarov je `Brainfuck` a hned pouzijeme decoder na https://www.dcode.
 ```
 flag: SK-CERT{my_br41n_hur75}
 ```
+</details>
 
 ## 5 Toto je peklo
 > Posledná úloha v scenári, dúfame že ste si tento scenár užili
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Z predchazajucej ulohy vysiel taky divny retazec nahodnych znakov, skusili sme vsetky dekodery na https://www.dcode.fr/tools-list#programming_language a ani jeden nepomohol. Google nas zaviedol na https://weekly-geekly.imtqy.com/articles/313334/index.html a skusame najst [dekompilator](https://www.tutorialspoint.com/execute_malbolge_online.php) na `Malbolge` (deviaty kruh Danteho pekla :))
 
@@ -84,3 +103,4 @@ Z predchazajucej ulohy vysiel taky divny retazec nahodnych znakov, skusili sme v
 ```
 flag: SK-CERT{31gh7h_c1rcl3_0f_h3ll}
 ```
+</details>

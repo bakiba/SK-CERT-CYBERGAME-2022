@@ -9,6 +9,9 @@ Reported Difficulty: 2
 
 > Body: 6
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Z linky stahujeme subor `CG_A_800x600.jpg`, ktory samozrejme na prvy pohlad vyzera normalne, ale vieme ze je tam nieco ukryte pomocou [steganografie](https://en.wikipedia.org/wiki/Steganography).
 
 ![](images/2022-04-21-10-11-58.png)
@@ -20,11 +23,15 @@ Skusame nejaky online stego decoder, a tento sa ukazal uzitocny https://futurebo
 ```
 flag: SK-CERT{st3g0_15_gr34t}
 ```
+</details>
 
 ## 2 Vieš čítať?
 > Oboznámili ste sa so základnou steganografiou, a teraz sa oboznámime s nejakým tým šifrovaním.
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Pri zisteni sifrovania sme skusali niekolo roznych zakladnych receptov z CyberChef kym sme pouzili ROT13:
 
@@ -33,11 +40,15 @@ Pri zisteni sifrovania sme skusali niekolo roznych zakladnych receptov z CyberCh
 ```
 flag: SK-CERT{r0t13_15_345y}
 ```
+</details>
 
 ## 3 Slabá šifra
 > O krok bližšie k riešeniu
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Dalsi kod vyzera byt poliy-alphabetic cipher, pozname to podla toho ze rovnake pismeno paintextu ma ine pismeno v zakodovanom texte, napriklad `qvewe://njuelngw.ezt/VdApWIQz` vyzera byt URL adresa kde `qvewe://` ma byt `https://`. 
 Tak s tymto zacneme dekovoanie, pouzijeme tento dekoder https://www.dcode.fr/vigenere-cipher a do `KNOWING A PLAINTEXT WORD:` vlozime `HTTPS` a ziskavame flag.
@@ -47,11 +58,16 @@ Tak s tymto zacneme dekovoanie, pouzijeme tento dekoder https://www.dcode.fr/vig
 ```
 flag: SK-CERT{v1g3n3r3_c1ph3r}
 ```
+</details>
+
 
 ## 4 What the Dot!?
 > Naša posledná uloha v tomto scenári je nezvyčajna, ale aj napriek tomu že nie je moc používaná, bola pridaná pre zaujímavosť
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 To co nahadzame na pastebine vyzera ako tap code cipher
 
@@ -64,3 +80,4 @@ Pouzijeme dekoder https://www.dcode.fr/tap-cipher a do tap gridu dame standardnu
 ```
 flag: SK-CERT{TAPCODEFLAG}
 ```
+</details>

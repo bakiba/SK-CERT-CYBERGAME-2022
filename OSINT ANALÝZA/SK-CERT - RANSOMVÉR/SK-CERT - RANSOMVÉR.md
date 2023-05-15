@@ -13,6 +13,9 @@ Reported Difficulty: 2
 
 > Body: 6
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Začíname s Google "Fibonacci FIN" čo nás dovedie do článku na [Zive](https://zive.aktuality.sk/clanok/fl21n24/nova-skupina-fibonacci-fin-utoci-na-siete-hotelov-monitoruje-svetovych-politikov/?msclkid=87c785bbc4c111eca23766f2fdbd4ade) čo si ale uvedomujem, že je to z predchádzajúcej úlohy [SK-CERT - INITIAL: APT 0XFF](../SK-CERT%20-%20INITIAL%20APT%200XFF/SK-CERT%20-%20INITIAL%20APT%200XFF.md).
 
 Ďalej skúšame hľadať info o ETH adrese `0x2615C659Fdb321b5550F87F7e6A0bD5ccd0dB3D1` - skúšame rôzne blockhain explorery (https://blockchair.com/, https://etherscan.io/), vidíme tam dve transakcie jedna do, a druha z adresy `0x2615C659Fdb321b5550F87F7e6A0bD5ccd0dB3D1`, ale nám to nič nepomáha.
@@ -42,11 +45,15 @@ Spomínam si, že som sa na to už par krát pozeral, ale keďže som noob tak s
 ```
 flag: SK-CERT{f1r57_7r4n54c710n}
 ```
+</details>
 
 ## 2 Prepojenie
 > Ešte, že je ten blockchain verejný. Čo sa stalo s peniazmi?
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Teraz keď už viem ako pozrieť dáta v `Input Data` field, pozrel som sa na odchádzajúcu [tansakciu](https://etherscan.io/tx/0x3d05580c1affaf8ddfbc99ef1d39452d63564c0c4c3cb30100b3b6b602b6df41) z adresy `0x2615c659fdb321b5550f87f7e6a0bd5ccd0db3d1` a zistil, že v `Input Data` field je [Thor URL](https://en.wikipedia.org/wiki/.onion): `skcertaujfclq4owmhgk63pl5jenxdobukaib5wolq7dwyzquewfgnyd.onion/#r0ck37m4573r`
 
@@ -59,11 +66,15 @@ Po otvorení adresy v [Thor Browser](https://www.torproject.org/download/) získ
 ```
 flag: SK-CERT{0n10n_d0m41n}
 ```
+</details>
 
 ## 3 Služba
 > Vyzerá to na nejaký hidden service, aké informácie viete zo stránky získat?
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Pozerám, čo na tej stránke všetko je, píše tam `you can contact us on our forum on this website` ale na `Contact Us` page nie je žiadny forum, iba contact info:
 
@@ -84,11 +95,15 @@ Skúšame či ten forum je dostupný cez `/forum` a máme náš flag v plnej kra
 ```
 flag: SK-CERT{br0k3n_m1x3r}
 ```
+</details>
 
 ## 4 Čo ďalej?
 > Daný hidden service vypol fórum, aby sa ľudia nemohli ďalej sťažovať. Čo teraz?
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Pri ďalšom pátraní som sa pozrel na každú ETH adresu uvedenú vo forume, zaujímavá bola adresa `0x456642fC0CEb49B6a2E975695978147b51BE6597` od `r0ck37m4573r`:
 
@@ -101,11 +116,15 @@ Na tej [adrese](https://etherscan.io/address/0x456642fC0CEb49B6a2E975695978147b5
 ```
 flag: SK-CERT{cryp70_c0mm3n7}
 ```
+</details>
 
 ## 5 Panel
 > Aké informácie viete získať z kontrolného panelu útočníka?
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Z predchádzajúcej úlohy máme aj URL na `control panel` ktorý som hľadal už v prvej úlohe. Trošku ma mrzí, že posledný flag som našiel už v prvej úlohe.. ale skúsim ho nájsť aj oficiálnou cestou.
 
@@ -126,4 +145,5 @@ Trošku som sklamaný, že posledný flag nebol viac náročnejší.
 ```
 flag: SK-CERT{p4n3l_w17h0u7_4u7h}
 ```
+</details>
 

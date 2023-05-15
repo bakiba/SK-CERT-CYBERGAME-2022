@@ -9,6 +9,9 @@ Reported Difficulty: 0
 
 > Body: 1
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Vyzera to na base64 encoding:
 
 ![](images/2022-03-06-16-59-24.png)
@@ -20,11 +23,15 @@ Pouzieme Linux shell a dekodujeme `curl https://pastebin.com/raw/npNB3H16 | base
 ```
 flag: SK-CERT{b453_64_fl4g}
 ```
+</details>
 
 ## 2 Druhá časť
 > Base64 ste úspešne zvládli, zvládnete aj ďaľšiu výzvu?
 
 > Body: 1
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Dalsia cast enkodovania vyzera byt standardny ASCII kod, pozujeme CyberChef pre tuto ulohu:
 
@@ -33,11 +40,15 @@ Dalsia cast enkodovania vyzera byt standardny ASCII kod, pozujeme CyberChef pre 
 ```
 flag: SK-CERT{45c11_3nc0d1ng}
 ```
+</details>
 
 ## 3 Tretia časť
 > Tak a touto úlohou prichádzame na záver INITIAL Scenáru. Držíme palce v hre!
 
 > Body: 1
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Posledna cast zda sa byt Hex kod:
 
@@ -46,3 +57,4 @@ Posledna cast zda sa byt Hex kod:
 ```
 flag: SK-CERT{h3x_3nc0d1ng}
 ```
+</details>

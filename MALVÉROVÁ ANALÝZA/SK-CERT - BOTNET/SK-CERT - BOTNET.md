@@ -9,6 +9,9 @@ Reported Difficulty: 2
 
 > Body: 3
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Pozrieme sa na https://ventilsro.github.io/, zvyčajne prvý flag býva v page source, ale v tomto prípade nič tam nie je. Zaujímavé ale vyzerá ten javascript:
 
 ![](images/2022-03-05-14-24-18.png)
@@ -20,11 +23,15 @@ Pozrieme sa naň a máme prvý flag:
 ```
 flag: SK-CERT{c4n_y0u_f1nd_17}
 ```
+</details>
 
 ## 2 Takže pre toto!
 > Keď už vieme ako funguje javascript, Musíme zistiť či náhodou neobsahuje niečo škodlivé.
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Ten java script vyzerá podozrivo, pravdepodobne bol použitý nejaký obfuscator, skúsime hľadať online, napríklad tento: http://www.addressmunger.com/javascript_obfuscator/index.php
 Vložíme tam náš javascript, dva krát dáme decode a máme šťastie že, Arci-Zločan použil default obfuscator.
@@ -51,11 +58,15 @@ Síce žiadny tam flag nie je, ale z kódu vidíme, že sa reklama ťahá z `'ht
 ```
 flag: SK-CERT{l3g17_4nt1v1ru5}
 ```
+</details>
 
 ## 3 Antivirus 3000
 > Reklama, a ponúka stiahnutie antivírusu? Podozrivé! Je potrebné zistiť čo reálne stahujeme.
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Z predchádzajúceho kroku vidíme, že reklama číslo 43 okrem flagu, ukrýva aj odkaz na nejaký shell script, tak sa poďme na to pozrieť: `curl http://194.182.66.53/antivirus3000_installer.sh` a máme hneď ďalší flag:  
 
@@ -64,11 +75,15 @@ Z predchádzajúceho kroku vidíme, že reklama číslo 43 okrem flagu, ukrýva 
 ```
 flag: SK-CERT{1n574l_17_4lr34dy}
 ```
+</details>
 
 ## 4 Elf
 > Dostali sme ďalšie hlásenie že niekoľko použivatelov tejto stránky malo poškodený počítač, je potrebné vyšetrovať ďalej
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Z predchádzajúcej úlohy vidíme, že shell script niečo stiahne z `https://rentry.co/vpvqs/raw` a uloží to ako súbor `antivirus3000`. Sťahujeme ten súbor a zisťujeme, že je to štandardná Linuxová binárka. 
 ```
@@ -124,22 +139,30 @@ je to vlastne adresa pre `local_268[int(conter)]`, nie pre cely string `local_26
  (gdb)x/s $rbp-0x260
 0x7fffffffdc90: "https://pastebin.com/raw/9gQzJk4j#SK-CERT{p4"
 ```
+</details>
 
 ## 5 Vykonané príkazy
 > Zistili ste, že program spúšťa príkazy z pastebin. Teraz treba zistiť aké konkrétne.
 
 > Body: 3
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Tu som použil flag, ktorý som získal na začiatku predchádzajúcej úlohy, kde som odchytil komunikáciu s pastebin a stiahol `runner.tar`, ktorý obsahoval `flag.txt`
 
 ```
 flag: SK-CERT{4n0th3r_f1lthy_3lf}
 ```
+</details>
 
 ## 6 Ďalšia binárka
 > Ďalší binárny súbor? Pustite sa do analýzy
 
 > Body: 6
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Po spustení `./runner` sa nič nedeje... niet divu. Otvárame `runner` v Ghidre a pozeráme `main` funkciu:
 
@@ -166,6 +189,7 @@ Po niekoľkých opakovaní úspešne získavame ďalší flag:
 ```
 flag: SK-CERT{th3_k3y}
 ```
+</details>
 
 ## 7 Dekryptor
 > Z analýzy sme zistili že sa jedná o ransomvér a klúč je pevne zakódovaný v zdrojovom kóde. Je potrebné napísať dekryptor a dekryptovať následovné súbory: https://drive.google.com/file/d/1Iv_Bl3yI8Pncd5iq3xaGdqnaScVwTO3Q/view?usp=sharing

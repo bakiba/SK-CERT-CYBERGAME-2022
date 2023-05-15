@@ -9,6 +9,9 @@ Reported Difficulty: 3
 
 > Body: 9
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 :exclamation: *Ďalšie kroky boli pridané po súťaži na základe pomoci od iných súťažiacich ktorým patri vďaka!*
 
 Z priloženého odkazu sťahujeme zip súbor v ktorom sa nachádza `flag.txt.encrypted` ktorý je zašifrovaný:
@@ -34,11 +37,15 @@ flag: SK-CERT{00_z3r0_r4nd0mn355_0000}
 P.S. v diskusii na diskorde bol uvedený aj ďalší spôsob ako toto dešifrovať pomocou `openssl enc -aes-256-ctr -K 0 -iv 0 -in flag.txt.encrypted`
 
 ![](images/2022-05-13-11-19-51.png)
+</details>
 
 ## 2 Recyklácia
 > Autori sa poučili a nastavili kvalitný kľúč a inicializačný vektor. Stále im však čosi nedocvaklo… Toto je obsah adresára, zašifrovaného ransomvérom: [link po sutazi nefunguje](#2-recyklácia)
 
 > Body: 9
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Z priloženého odkazu sťahujeme zip súbor v ktorom sa nachádzajú dva súbory `Strategia_kybernetickej_bezpecnosti_2021.pdf.encrypted` a `flag.txt.encrypted`. Slovo "recyklácia" nás navádza na situáciu znovu použitia rovnakého kľúča a inicializačného vektora pri šifrovaní. Z mojej limitovanej znalosti kryptografie, tuším že sa tato úloha da vyriešiť bez kľúča a IV, spomínam si že som také niečo kedysi čítal... tak ideme googliť a nachádzame tento link https://crypto.stackexchange.com/questions/2991/why-must-iv-key-pairs-not-be-reused-in-ctr-mode ktorý nám potvrdzuje že keď mame šifrovaný text C1 a k nemu prislúchajúci plaintext P1 a ďalší šifrovaný text C2 ktorý bol šifrovaný rovnakým kľúčom ako C1, tak na dešifrovanie C2 nepotrebujeme nič iné okrem C1, P1 a C2. Takže:
   * C1 = `Strategia_kybernetickej_bezpecnosti_2021.pdf.encrypted`
@@ -70,11 +77,15 @@ Potom som vykonal script `python3 decode.py` a skúsil či je tam flag: `strings
 ```
 flag: SK-CERT{r3cyc11n6_g0n3_s0_wr0n6}
 ```
+</details>
 
 ## 3 Tajomstvá
 > Zákazníka skolila nová verzia ransomvéru. Zjavne už každý súbor šifruje inak. Tu sú nejaké vzorky.
 
 > Body: 9
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Po rozbalení zadania, máme 3 súbory:
 
@@ -106,6 +117,7 @@ Vložíme nasledujúce údaje do CyberChef a získavame ďalší flag:
 ```
 flag: SK-CERT{7h15_w45_0n1y_0bfu5c473d}
 ```
+</details>
 
 ## 4 Vzory
 > Novšia verzia ransomvéru nám zašifrovala jedinú kópiu nášho ascii-artu s flagom. Tentoraz je zjavne každý súbor zašifrovaný iným kľúčom, kľúč sa neukladá v súbore a ten správny ku ascii artu žiaľ nemáme k dispozícii. Z disku sme dokázali obnoviť len začiatok pôvodného ascii art súboru. Prikladáme zachránený začiatok a celý zašifrovaný súbor.

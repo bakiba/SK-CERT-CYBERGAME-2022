@@ -9,6 +9,9 @@ Reported Difficulty: 1
 
 > Body: 3
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Google nic nedal, skusame Bing ktory nachadza GitHub repo: https://github.com/3mp7yv01d/OctoBotDisaster a mame prvy flag.
 
 ![](images/2022-03-07-22-19-16.png)
@@ -16,11 +19,15 @@ Google nic nedal, skusame Bing ktory nachadza GitHub repo: https://github.com/3m
 ```
 flag: SK-CERT{f1r57_fl4g}
 ```
+</details>
 
 ## 2 Analýza zdroja	
 > Je potrebné získať informácie z nájdeného zdroju
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Pozerame sa na bot.c a nic tam zaujimave nie je, nic nenaznacuje ze treba to kompilovat alebo hladat flag niekde v kode. Pozerame sa dalej na GitHub uzivatela `3mp7yv01d`, nema ziadne ine repo, vidime ale ze spravil 3 commity do `OctoBotDisaster`, pozrieme sa na commit history https://github.com/3mp7yv01d/OctoBotDisaster/tree/b9605c01205a7ae79883dcdff3e1a2dfef83ed04 a nachadzame dalsi flag:
 
@@ -29,11 +36,15 @@ Pozerame sa na bot.c a nic tam zaujimave nie je, nic nenaznacuje ze treba to kom
 ```
 flag: SK-CERT{574r71ng_w17h_051n7}
 ```
+</details>
 
 ## 3 Discord
 > Čo nového na discorde? Pokračujeme analýzou discordového serveru
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Z predchazajucej ulohy je aj link na discord server, pozrieme sa tam, dame vyhladavat "SK-CERT" a mame dalsi flag:
 
@@ -42,11 +53,15 @@ Z predchazajucej ulohy je aj link na discord server, pozrieme sa tam, dame vyhla
 ```
 flag:SK-CERT{7r4n54c710n_c0mpl373}
 ```
+</details>
 
 ## 4 Sociálna sieť
 > Je tu ešte viac na zistenie?
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Na discorde si vyhladame usera `darkness#8770` a v jeho profile najdeme link na reddit:
 
@@ -59,11 +74,15 @@ Po otvoreni profilu v reddite mame dalsi flag:
 ```
 flag: SK-CERT{w4y_t0_r3dd1t}
 ``` 
+</details>
 
 ## 5 Zo siete na sieť
 > Nikdy nepárujte svoju online identitu so svojou reálnou!
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Prehladavanie socialnych sieti pre uzivatela `d4rkne555` nic neprinieslo, zaujimave ze google query na `d4rkne555 site:linkedin.com` vrati podozrivy vysledok, ale ziadny flag to neprinieslo.
 
@@ -88,3 +107,4 @@ A konence mame nasho kupujuceho:
 ```
 flag: SK-CERT{h3nr1ch_r15z0rf3r}
 ```
+</details>

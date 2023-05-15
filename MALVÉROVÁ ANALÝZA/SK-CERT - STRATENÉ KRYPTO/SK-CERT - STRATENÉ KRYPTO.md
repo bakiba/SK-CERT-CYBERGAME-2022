@@ -9,6 +9,9 @@ Reported Difficulty: 1
 
 > Body: 3
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Z priloženého odkazu sa nám stiahne `documents.zip` v ktorom je súbor `bitcoin.odt`, zistime že je to OpenOffice dokument, a ako to býva v týchto hrách, asi to bude nejaké škodlivé makro. Takže po nainštalovaní LibreOffice a povolení makrá, otvárame bitcoin.odt a hneď máme upozornenie, že makrá môžu obsahovať vírus. Po otvorení makra, získavame náš prvý flag:
 
 ![](images/2022-03-05-14-00-36.png)
@@ -16,11 +19,15 @@ Z priloženého odkazu sa nám stiahne `documents.zip` v ktorom je súbor `bitco
 ```
 flag: SK-CERT{h3ll4_3v1l_m4cr0}
 ```
+</details>
 
 ## 2 Čo spúšťame?
 > Vyzerá to tak, že makro spúšťa nejaký ďalší program, je potrebné zistiť aký.
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Hľadanie ďalšieho flagu bolo trošku zamotané, keďže prvé podozrivé miesto po dekódovaní [ASCII](https://testguild.com/qtp-ascii-chr-code-chart/) odhalilo flag `SK-CERT{wh3re_my_crypt0_g03s}`, ale to nebol ten správny.
 
@@ -33,11 +40,15 @@ Po dlhšom pátraní, sme sa dostali na debug funkcií, ktoré boli na začiatku
 ```
 flag: SK-CERT{w3_w4nt_s0m3_w4kk3t5}
 ```
+</details>
 
 ## 3 Čo ďalej?
 > Zistite kam sa posielaju ukradnuté kryptopenaženky.
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Tak tu sme hneď skúsili flag `SK-CERT{wh3re_my_crypt0_g03s}` ktorý sme našli v predchádzajúcom kroku pri dekódovaní podozrivého ASCII reťazca:
 
@@ -47,11 +58,15 @@ chr(13) & chr(83) & chr(75) & chr(45) & chr(67) & chr(69) & chr(82) & chr(84) & 
 ```
 flag: SK-CERT{wh3re_my_crypt0_g03s}
 ```
+</details>
 
 ## 4 Skládačka
 > Zistili sme kam sa odosielajú kryptopenaženky. Skúste zistiť ako funguje malvér v prípade, že vykradne nejaké kryptopenaženky.
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Keďže makro hľadá krypto peňaženky aby sa dostal do ďalšej fáze exekúcie, tak mu tam jednu dáme - ideme na https://www.myetherwallet.com/wallet/create/software?type=keystore vygenerujeme softvérovú peňaženku a pokračujeme v debugovani. Tu ale narážame na problém lebo strana čo ma prijímať krypto nefunguje a makro nám tu padá:
 
@@ -68,11 +83,15 @@ Tak to odosielanie proste zakomentujeme a skúsime to znovu.
 ```
 flag: SK-CERT{50m3_k1nd_0f_m4lw4r3}
 ```
+</details>
 
 ## 5 Finálna vlajka
 > Z predošlej časti ste zistili že sa sťahuje nejaký script, je potrebné zistiť čo je zač.
 
 > Body: 3
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 V predchádzajúcej úlohe, sa spolu s flagom, z [pastebin linku](https://pastebin.com/tBjrV6v3) stiahne powershell payload do `C:\Users\Public\Documents\script.ps1`. Samozrejme, ten powershell je obfuskovaný:
 
@@ -90,3 +109,4 @@ Výsledok nie je úplne ideálny, sú tam ešte ďalšie nadbytočne znaky, ale 
 ```
 flag: SK-CERT{p0w3r5h3ll_k3yl0g}
 ```
+</details>

@@ -11,6 +11,9 @@ Vlajka je PID a IP adresa (Formát: PID_IP)
 
 > Body: 9
 
+<details>
+<summary>Zobraziť riešenie</summary>
+
 Toto je moja prva analyza memory dumpu, takze toto urcite nie je ukazka ako sa to robi ale skor moja cesta ucenia sa.
 
 Najprv som stiahol [Volatility Workbench](https://www.osforensics.com/tools/volatility-workbench.html) a zoznamil sa s toolom, trosku googlenia a som pochopil ze najprv musim zistit s akym typom dumpu pracujem aby ho tool vedel rozpoznat a spravne s nim pracovat. Trvalo mi chvilku kym som pochopil ze prilozeny subor `Volatility2Ubuntu20_04.zip` je profil pre Volatility ktory treba pouzit aby vedel rozpoznat typ dumpu. Po skopirovani profilu do `profiles` adresara, pridani profilu do `profile-list.txt` som uspesne zacal analyzovat memory dump:
@@ -50,12 +53,16 @@ Ten `runner.pyc` konecne priniesol ovocie, bola tam IP addressa na ktoru utocnik
 ```
 flag: 45184_198.19.183.20
 ```
+</details>
 
 ## 2 Zranitelnosť
 > Je potrebné zistiť ako útočník prenikol do systému.
 Vlajka je CVE identifikátor zranitelnosti.
 
 > Body: 9
+
+<details>
+<summary>Zobraziť riešenie</summary>
 
 Pozrieme sa na process `23221` z ktoreho utocnik zacal exfiltracu, videme ze jeho parent process je `866` ale nie je vobec v zozname aktivnych procesov.
 
@@ -68,6 +75,7 @@ Skusame komandu `linux_pidhashtable` ci nam mozno ukaze viac:
 Zistujeme ze process id `683` patri procesu `supervisord`, rychle hladanie CVE patriace tomtu produktu nam neprinasaju ovocie, ani jedna z dvoch zdranitelnosti (	CVE-2017-11610, CVE-2019-12105) nie je nasou vlajkou.
 
 Zostavame tu asi zaseknuty....
+</details>
 
 ## 3 Payload
 > Zamknuté Zranitelnosť
